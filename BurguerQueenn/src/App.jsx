@@ -1,6 +1,7 @@
 import "./index.css";
 
-import { useState } from "react";
+
+
 
 
 
@@ -8,7 +9,10 @@ function Login() {
 
   function eventLogin (e) {
     e.preventDefault();
-
+    const email = e.target.email.value;
+    const password= e.target.password.value; 
+    console.log(email, password);
+    
   
   
   
@@ -17,20 +21,29 @@ function Login() {
   // Aquì hago el formulario
   return (
     <>
-    
-    
+ 
     <div className="squareLogin">
-   
-      <input type="text" className="emailInput" placeholder="Type your email" />
-      <input type="text" placeholder="Password" />
-      <button className="btnLogin" onClick={evento}> Login </button>
+     
+    <form className="loginForm"onSubmit = { eventLogin }>
+      <label className= "emailLabel">
+        <input type ="text" name="email" className="inputEmail" placeholder="Type your email">
+        </input>
+      </label>
+      <label className="passworrLabel">
+        <input className="inputPassword" name="password" placeholder="Password"></input>
+      </label>
+      <button type = "submit" className="btnLogin"> Login</button>
 
+
+
+
+
+    </form>
+      
     
     
     </div>
-    </>
-
-      
+    </>     
   );
 
 }
