@@ -24,6 +24,13 @@ function Login() {
  
     <div className="squareLogin">
      
+     
+  <div className="conatinerTitleImage">
+    <h1>Burguer Queen </h1>
+    <img className="logo"src="https://i.ibb.co/7SRPXzW/burguer.png" alt="burguer" ></img>
+    </div>    
+    
+     
     <form className="loginForm"onSubmit = { eventLogin }>
       <label className= "emailLabel">
         <input type ="text" name="email" className="inputEmail" placeholder="Type your email">
@@ -40,7 +47,7 @@ function Login() {
 
     </form>
       
-    
+    <div className="footerLogin"></div> 
     
     </div>
     </>     

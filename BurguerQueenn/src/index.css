@@ -1,25 +1,178 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
+
 body {
-    background-image: ("https://i.ibb.co/X8Kf7Kr/border.jpg");
+    background-color: bisque;
 }
+
+
+
 #root {
-  display: flexbox;
+    display: flex;
+    width: 820px;
+    height: 1180px;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-image: url(https://i.ibb.co/qRwgKDB/border.jpg);
 }
 
-@media (max-width: 1133px) {
-  #root {
-    display: flexbox;
-  }
-  .squareLogin {
-    display: flexbox;
-    background-color: FFF2CC;
-    
-  }
-  
+.squareLogin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 70%;
+    margin-left: 4%;
+    margin-top: 15%;
+    margin-bottom: 20%;
+    background-color: white;
+    flex-wrap: nowrap;
+    border-radius: 62px;
+
+}
+
+
+.conatinerTitleImage {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 0%;
+    margin-top: -25%;
+}
+
+h1 {
+    width: 60%;
+    height: 60%;
+    margin-left: 0%;
+    margin-top: 20%;
+    font-family: 'Abril Fatface';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 108px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #DFA67B;
+}
+
+.logo {
+    display: flex;
+    width: 400px;
+    height: 300px;
+    margin-left: 50%;
+    margin-top: -80%;
+    transform: rotate(7.15deg);
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 62px;
+    width: 80%;
+    height: 60%;
+    margin-top: -14%;
+    margin-bottom: 8%;
+    background: #F4B183;
+    flex-wrap: nowrap;
+}
+
+.inputEmail {
+    display: flex;
+    width: 459px;
+    height: 78px;
+    border-radius: 20px;
+
+
+}
+
+.inputPassword {
+    display: flex;
+    width: 387px;
+    height: 78px;
+    border-radius: 20px;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+.btnLogin {
+    width: 253px;
+    height: 78px;
+    left: 246px;
+    top: 775px;
+    border-radius: 20px;
+    background-color: #FFD966;
+    font-size: 32px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+
+    color: #000000;
+
+    opacity: 0.8;
+
+
+
+
+}
+::placeholder {
+    Weight:400px;
+    font-size:28px;
+line-height:33.89px;
+}
+
+/*
+
+
+
+
+
+
+
+.inputEmail {
+    display: flex;
+    width: 459px;
+height: 78px;
+    border-radius: 20px;
+    margin-top: 15%;
+    margin-bottom: 15%;
+    align-self: center;
+
+}
+
+.inputPassword {
+    display: flex;
+    width: 387px;
+    height: 78px;
+    border-radius: 20px;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+.btnLogin {
+    display: flex;
+    border-radius: 20px;
+    width: 15%;
+    height: 65%;
+    margin: 5%;
+    font-size: medium;
+
+
+
+
 }
 
 
 
+@media (min-width: 768px) and (max-width: 1133px) and (orientation: landscape) {}*/
