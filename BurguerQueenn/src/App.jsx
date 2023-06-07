@@ -1,22 +1,29 @@
 import "./index.css";
-
-
+import { useState, useEffect } from "react";
+// useState me permite saber el estado del usuario, si esta logueado
+//o no
 
 
 
 
 function Login() {
+  
+ const [milogin, setlogin] = useState(false);
+ //para capturar le nombre del usuario y la clave
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  function eventLogin (e) {
-    e.preventDefault();
-    const email = e.target.email.value;
-    const password= e.target.password.value; 
-    console.log(email, password);
+  const getValues = (e) =>{
     
+  e.preventDefault();
+  const email = e.target.email.value;
+  const password= e.target.password.value; 
+  console.log(email);
+  console.log(password);
   
-  
-  
+
   }
+  
   
   // Aquì hago el formulario
   return (
@@ -31,13 +38,13 @@ function Login() {
     </div>    
     
      
-    <form className="loginForm"onSubmit = { eventLogin }>
+    <form className="loginForm"onSubmit = { getValues }>
       <label className= "emailLabel">
-        <input type ="text" name="email" className="inputEmail" placeholder="Type your email">
+        <input type ="text" name="email" className="inputEmail" placeholder="Type your email"   required>
         </input>
       </label>
       <label className="passworrLabel">
-        <input className="inputPassword" name="password" placeholder="Password"></input>
+        <input className="inputPassword" name="password" placeholder="Password"  required></input>
       </label>
       <button type = "submit" className="btnLogin"> Login</button>
 
