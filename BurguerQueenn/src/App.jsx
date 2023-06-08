@@ -1,5 +1,6 @@
 import "./index.css";
 import { useState } from "react";
+import {useNavigate} from "react-router-dom"
 // useState me permite saber el estado del usuario, si esta logueado
 //import axios
 
@@ -14,8 +15,10 @@ function Login() {
   //const [login, setlogin] = useState("false");
   //para capturar le nombre del usuario y la clave con el evento onchage
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  //const [email, setEmail] = useState("");
+  //const [password, setPassword] = useState("");
+  
+  const navigate = useNavigate();
 
   const getValues = (e) => {
     e.preventDefault();
@@ -32,6 +35,7 @@ function Login() {
     axios.post("http://localhost:8080/login", objeto)
     .then((response ) => {
       console.log(response, 'hola')
+      navigate("/menu");
       //aqui colocar  el menu cuando el usuario 
       //se loguee
 
