@@ -32,6 +32,8 @@ function Login() {
     axios.post("http://localhost:8080/login", objeto)
     .then((response ) => {
       console.log(response, 'hola')
+      //aqui colocar  el menu cuando el usuario 
+      //se loguee
 
     })
     .catch ((error) => {
