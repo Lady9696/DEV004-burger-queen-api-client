@@ -50,7 +50,7 @@ function Login() {
   return (
     <>
 
-      <div className="squareLogin">
+      <div className="squarecontainer">
         <div className="conatinerTitleImage">
           <h1>Burguer Queen </h1>
           <img className="logo" src="https://i.ibb.co/7SRPXzW/burguer.png" alt="burguer" ></img>

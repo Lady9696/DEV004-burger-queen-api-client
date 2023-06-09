@@ -20,7 +20,7 @@ body {
     background-image: url(https://i.ibb.co/qRwgKDB/border.jpg);
 }
 
-.squareLogin {
+.squarecontainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -133,47 +133,23 @@ line-height:33.89px;
 text-align: center;
 }
 
-/*
 
+/* vista menu-----------------------------------------------*/
 
-
-
-
-
-
-.inputEmail {
-    display: flex;
-    width: 459px;
-height: 78px;
-    border-radius: 20px;
-    margin-top: 15%;
-    margin-bottom: 15%;
-    align-self: center;
-
-}
-
-.inputPassword {
-    display: flex;
-    width: 387px;
+#sendOrder{
+    width: 253px;
     height: 78px;
+    left: 246px;
+    top: 775px;
     border-radius: 20px;
-    margin-top: 5%;
-    margin-bottom: 10%;
+    background-color: #FFD966;
+    font-size: 32px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+
+    color: #000000;
+
+    opacity: 0.8;
 }
-
-.btnLogin {
-    display: flex;
-    border-radius: 20px;
-    width: 15%;
-    height: 65%;
-    margin: 5%;
-    font-size: medium;
-
-
-
-
-}
-
-
-
-@media (min-width: 768px) and (max-width: 1133px) and (orientation: landscape) {}*/
