@@ -35,6 +35,9 @@ function Login() {
     axios.post("http://localhost:8080/login", objeto)
     .then((response ) => {
       console.log(response, 'hola')
+      window.localStorage.setItem("accessToken", response.data.accessToken);
+      window.localStorage.setItem("user",JSON.stringify( response.data.user));
+      
       navigate("/menu");
       //aqui colocar  el menu cuando el usuario 
       //se loguee
@@ -57,11 +60,11 @@ function Login() {
         </div>
         <form className="loginForm" onSubmit={getValues}>
           <label className="emailLabel">
-            <input type="text" name="email" className="inputEmail" placeholder="Type your email" onChange={(e) => setEmail(e.target.value)} required>
+            <input type="text" name="email" className="inputEmail" placeholder="Type your email"  required>
             </input>
           </label>
           <label className="passworrLabel">
-            <input className="inputPassword" name="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} required></input>
+            <input className="inputPassword" name="password" placeholder="Password"  required></input>
           </label>
           <button type="submit" className="btnLogin"> Login</button>
         </form>
