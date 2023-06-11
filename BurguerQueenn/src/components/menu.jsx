@@ -1,9 +1,12 @@
 //import axiosBD from "../axios";
 import axios from "axios";
+import { useState } from "react";
 
 import { Navigate } from "react-router-dom";
 import "../index.css";
 export const Menu = () => {
+  const[productos,setProductos] = useState();
+  
     // el evento con el boton
 //meto los datos dentro del formulario form para que los envie al cocina
 //creo el evento asociado al formulario
@@ -13,6 +16,17 @@ if(access=== null && user === null ){
     
 return <Navigate to="/" replace={true} />
 }
+
+axios.get("http://localhost:8080/products")
+.then((resp) => {
+  console.log(resp, '*********')
+
+})
+.catch(() =>{
+
+});
+
+
 //console.log();
 const sendToCook = (e) => {
     e.preventDefault();
@@ -25,7 +39,7 @@ const sendToCook = (e) => {
     }
     console.log(objeto2)
 //Aqui debo hacer la peticiòn, aqui debo psar el objeto
-axios.post("http://localhost:8080/login")
+
 .then((response ) => {
   console.log(response, 'hola')
   
