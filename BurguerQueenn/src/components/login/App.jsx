@@ -1,4 +1,4 @@
-import "./index.css";
+import "../login/login.css";
 //import { useState } from "react";
 import {useNavigate} from "react-router-dom"
 // useState me permite saber el estado del usuario, si esta logueado

@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
-import Login from "./components/login/App.jsx";
-import { Menu } from './components/menu/menu.jsx';
+import Login from "./App.jsx";
+import { Menu } from './components/menu.jsx';
 
 
 export const Router = () => {
