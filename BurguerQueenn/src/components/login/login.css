@@ -1,3 +1,5 @@
+
+
 * {
     margin: 0;
     padding: 0;
@@ -127,13 +129,23 @@ h1 {
 
 }
 ::placeholder {
-    Weight:400px;
+    
     font-size:28px;
 line-height:33.89px;
 text-align: center;
 }
+.input-group-addon{
+   
+    
+   
 
-
+}
+ion-icon {
+    font-size: 34px;
+    position: absolute;
+    margin-top: -12%;
+    margin-left: 40%;
+  }
 /* vista menu-----------------------------------------------*/
 
 #sendOrder{
