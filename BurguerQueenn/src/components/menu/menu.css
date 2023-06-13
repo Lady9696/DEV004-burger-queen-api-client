@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+#root {
+    display: flex;
+    
+    margin-top: 0;
+    margin-bottom: 0;
+    background-image: url(https://i.ibb.co/qRwgKDB/border.jpg);
+}
+
+.squareMenu{
+    display: flex;
+    background-color: rgb(197, 25, 25);
+    width: 50%;
+    margin: 5%;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+   
+   
+    
+}
+
+.productImage{
+    width: 40%;
+    height: 20%;
+    align-items: center;
+}
+.productName{
+    font-size: 150%;
+    align-self: center;
+ 
+    
+}
+.containerimageName{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 5%;
+}

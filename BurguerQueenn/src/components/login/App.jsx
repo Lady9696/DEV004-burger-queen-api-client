@@ -45,7 +45,7 @@ function Login() {
           </div>
           <div className="passwordGroup">
             <label htmlFor="passworrLabel"></label>
-            <input type="password" security id="passwordInput" name="password" className="inputPassword" placeholder="Password" required />
+            <input type="password"  id="passwordInput" name="password" className="inputPassword" placeholder="Password" required />
             <span className="input-group-addon">
             </span>
           </div>

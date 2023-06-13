@@ -11,12 +11,12 @@ body {
     background-color: bisque;
 }
 
-
+/*width: 820px;
+    height: 1180px;*/
 
 #root {
     display: flex;
-    width: 820px;
-    height: 1180px;
+    
     margin-top: 0;
     margin-bottom: 0;
     background-image: url(https://i.ibb.co/qRwgKDB/border.jpg);
@@ -143,20 +143,3 @@ ion-icon {
   }
 /* vista menu-----------------------------------------------*/
 
-#sendOrder{
-    width: 253px;
-    height: 78px;
-    left: 246px;
-    top: 775px;
-    border-radius: 20px;
-    background-color: #FFD966;
-    font-size: 32px;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 39px;
-    text-align: center;
-
-    color: #000000;
-
-    opacity: 0.8;
-}

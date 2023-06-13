@@ -4,7 +4,6 @@ import "../menu/menu.css"
 import { useContext } from "react";
 import { dataContex } from "../contex/eso";
 import { Navigate } from "react-router-dom";
-import { Fragment } from "react";
 
 
 
@@ -22,12 +21,20 @@ return <Navigate to="/" replace={true} />
   
   return data.map((product) => {
   return(
-    <>
-    <Fragment key={product.id}>
-    <h1>{product.name}</h1>
+
+    <div key={product.id} className="squareMenu">
+     <form className="formmenu"> 
+   <div className="containerimageName">
+    <h2 className="productName">{product.name}</h2>
+    <img className="productImage" src={product.image} alt="burguer" ></img>
     
-  </Fragment>
-  </>
+    <h2>{product.price}</h2>
+    </div>
+
+   
+    </form> 
+  </div>
+  
 );
     
     
