@@ -12,13 +12,14 @@ function Login() {
     const objeto = {
       email: e.target.email.value,
       password: e.target.password.value
+      
     }
 
 
     //se utiliza  axios, con el mètodo post
     axios.post("http://localhost:8080/login", objeto)
       .then((response) => {
-        console.log(response, 'hola')
+        
         window.localStorage.setItem("accessToken", response.data.accessToken);
         window.localStorage.setItem("user", JSON.stringify(response.data.user));
         navigate("/menu");
@@ -45,7 +46,7 @@ function Login() {
           </div>
           <div className="passwordGroup">
             <label htmlFor="passworrLabel"></label>
-            <input type="password" security id="passwordInput" name="password" className="inputPassword" placeholder="Password" required />
+            <input type="password"  id="passwordInput" name="password" className="inputPassword" placeholder="Password" required />
             <span className="input-group-addon">
             </span>
           </div>
