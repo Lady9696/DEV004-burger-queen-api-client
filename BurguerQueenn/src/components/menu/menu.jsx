@@ -1,26 +1,34 @@
 //import axiosBD from "../axios";
 //import axiosBD from "../axios";
+
 import "../menu/menu.css"
+import { Navigate } from "react-router-dom";
+
 import { useContext } from "react";
 import { dataContex } from "../contex/eso";
-import { Navigate } from "react-router-dom";
+
 
 
 
 
 export const Menu = () => {
+  
   const { products } = useContext(dataContex);
-  
-const access =window.localStorage.getItem("accessToken");
-const user = JSON.parse(window.localStorage.getItem("user"));
-if(access=== null && user === null ){
-return <Navigate to="/" replace={true} />
-}
-  // const[productos,setProductos] = useState();
-  console.log(products,'*****');
-  
+
+  const access = window.localStorage.getItem("accessToken");
+  const user = JSON.parse(window.localStorage.getItem("user"));
+  if (access === null && user === null) {
+    return <Navigate to="/" replace={true} />
+  }
+   //const[productos,setProductos] = useState();
+  console.log(products, '*****');
+   return(<>
+   </>
+   )
+  /*
   return products.map((product) => {
   return(
+
 
     <div key={product.id} className="squareMenu">
      <form className="formmenu"> 
@@ -42,7 +50,7 @@ return <Navigate to="/" replace={true} />
 
   })
 
-
+*/
 
 
 

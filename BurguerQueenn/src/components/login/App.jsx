@@ -1,5 +1,5 @@
 import "../login/login.css";
-//import { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom"
 import axios from 'axios';
 /* se crea el componente Login */
@@ -10,6 +10,8 @@ function Login() {
   const getValues = (e) => {
     e.preventDefault();
     /*se crea un objeto con el value de los inputs*/
+
+    
     const objeto = {
       email: e.target.email.value,
       password: e.target.password.value

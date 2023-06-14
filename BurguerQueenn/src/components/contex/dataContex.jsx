@@ -13,7 +13,9 @@ const DataProvider = ({ children }) => {
   /*utilizo useState para utilizar el estado de los objetos, es decir la informaciòn*/
   /*el estadoproducts se inicializa con array vacio*/
   //VALORES DEL CONTEXTO
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([{ "id": 1 }
+
+  ]);
   /*Access se inicializa con el token lamacenado localstorage*/
   const [access, setAccess] = useState(window.localStorage.getItem("accessToken"));
   /*user se inicializa con el user lamacenado localstorage, es decir el correo*/
@@ -27,25 +29,12 @@ const DataProvider = ({ children }) => {
     //si alguna de estas variables cambia se actualiza el valor del value, sino se cambia se utiliza el valor por defecto
     // memorizado
   }, [access, products, user])
-//Permite ejecutar operaciones asicrònicas, en este caso obtener productos
-  useEffect(() => {
 
-    axios.get("http://localhost:8080/products")
-      .then((response) => {
-        //cuando se hace la solicitud, se guarda en la variable products
-        setProducts(response.products);
-        
-      })
-      .catch((error) => {
-        console.error("Error en la solicitud:", error);
-      });
-  }, []);
-/*permite configurar de manera global en encabezado en axios, encabezado que incluye el token y los datos del user en todas las
-las solicitudes de la app, es decir que antes de hacer cualquier solciitud debo estar verificada.
- */ useEffect(() => {
-  //si user y access existen, se actualiza los common headers, en Authorization se incluye el token
-  // mientras que en User-Data se establece los datos de usuario y se utiliza el mètodo para devolver un string con esa
-  //informaciòn
+  useEffect(() => {
+    //si user y access existen, se actualiza los common headers, en Authorization se incluye el token
+    // mientras que en User-Data se establece los datos de usuario y se utiliza el mètodo para devolver un string con esa
+    //informaciòn
+    console.log('estoy cambiando los headers**,', access);
     if (user && access) {
       axios.defaults.headers.common["Authorization"] = `Bearer ${access}`;
       axios.defaults.headers.common["User-Data"] = JSON.stringify(user);
@@ -53,10 +42,27 @@ las solicitudes de la app, es decir que antes de hacer cualquier solciitud debo 
     //recibe dos dependencias, user y access
     //si alguno de los dos cambia, el efecto se ejecuta y se actualiza los datos de la cabecera
   }, [user, access]);
+  //Permite ejecutar operaciones asicrònicas, en este caso obtener productos
+  useEffect(() => {
+    console.log('esta ela promesa');
+    axios.get("http://localhost:8080/products")
+      .then((response) => {
+        console.log(response, '**************');
+        //cuando se hace la solicitud, se guarda en la variable products
+        setProducts(response.products);
 
-
-/*Se realiza el retorno del dataContex.provider, que envuelve 
-se le pasa el value con los valores que se van acompartirn en toda la app */
+      })
+      .catch((error) => {
+        console.error("Error en la solicitud:", error);
+      });
+  }, []);
+  /*permite configurar de manera global en encabezado en axios, encabezado que incluye el token y los datos del user en todas las
+  las solicitudes de la app, es decir que antes de hacer cualquier solciitud debo estar verificada.
+  
+  
+  
+  /*Se realiza el retorno del dataContex.provider, que envuelve 
+  se le pasa el value con los valores que se van acompartirn en toda la app */
   return (
     <dataContex.Provider value={value}>{children}</dataContex.Provider>
   );
