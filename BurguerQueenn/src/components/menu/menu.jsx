@@ -9,7 +9,7 @@ import { Navigate } from "react-router-dom";
 
 
 export const Menu = () => {
-  const { data } = useContext(dataContex);
+  const { products } = useContext(dataContex);
   
 const access =window.localStorage.getItem("accessToken");
 const user = JSON.parse(window.localStorage.getItem("user"));
@@ -17,9 +17,9 @@ if(access=== null && user === null ){
 return <Navigate to="/" replace={true} />
 }
   // const[productos,setProductos] = useState();
-  console.log(data,'*****');
+  console.log(products,'*****');
   
-  return data.map((product) => {
+  return products.map((product) => {
   return(
 
     <div key={product.id} className="squareMenu">
