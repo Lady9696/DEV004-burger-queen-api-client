@@ -8,31 +8,24 @@ import { useContext, useState } from "react";
 import { dataContex } from "../contex/eso";
 
 export const Menu = () => {
-  const [Filter, setfilter] = useState("");
+  const { products } = useContext(dataContex);
+  const [filtro, setFiltro] = useState("");
   const [productosFiltrados, setProductosFiltrados] = useState([]);
-
-  const { products, access, user } = useContext(dataContex);
+  /*
+  access, user
   if (access === null && user === null) {
     return <Navigate to="/" replace={true} />
   }
- 
-
-  /*funcion para filtrar productos por tipo desayuno*/
-  const handleFilter = () => {
-
-    const desayunoFiltrado= products.filter((product) => product.type === "Desayuno");
-    /*cambio el estado de la variable*/
-    setfilter("Desayuno")
+*/
+  const handleFiltro = () => {
+    const desayunoFiltrado = products.filter((product) => product.type === "Desayuno");
+    setFiltro("Desayuno");
     setProductosFiltrados(desayunoFiltrado);
-
-  }
-
-
-
+  };
   //const[productos,setProductos] = useState();
   return (
     <div className="squareMenu">
-      <button className="breakfastButton" onClick={handleFilter}></button>
+      <button className="buttonbreakfast"onClick={handleFiltro}></button> 
       {productosFiltrados.map((product) => {
             
         return (
@@ -49,5 +42,4 @@ export const Menu = () => {
       })}
     </div>
   );
-
 }
