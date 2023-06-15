@@ -4,20 +4,39 @@ import { useNavigate } from "react-router-dom"
 import axios from 'axios';
 /* se crea el componente Login */
 function Login() {
+  /*
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+*/
+const [values, setValues]= useState({
+  email: "",
+  password: "",
+});
+
   /*Se declara navigate para poder utilizar el hook useNavigate
 */  const navigate = useNavigate();
 /*se crea una funcion y dentro de ella un evento que me permite capturar los valores del input email y contraseña*/
   const getValues = (e) => {
     e.preventDefault();
     /*se crea un objeto con el value de los inputs*/
+    const emailValue = e.target.email.value;
+  const passwordValue = e.target.password.value;
+  
+  setValues({
+    ...values,
+    email: emailValue,
+    password: passwordValue,
+  });
+ 
+};
+console.log(values, 'esoooo')
 
     
-    const objeto = {
-      email: e.target.email.value,
-      password: e.target.password.value
-    }
+    
+    
+
    /*se realiza la peticion con post y se le pasa el objeto con los values de los inputs*/
-    axios.post("http://localhost:8080/login", objeto)
+    axios.post("http://localhost:8080/login",values )
     /*si el usuario ingresa el correo y contraseña correctos, se va dirigir al menu*/
       .then((response) => {
         console.log(response, 'hola')
@@ -31,7 +50,7 @@ function Login() {
         }
       }))
 
-  }
+  
   return (
     <>
       <div className="squarecontainer">

@@ -13,6 +13,7 @@ import { dataContex } from "../contex/eso";
 
 export const Menu = () => {
   
+  
   const { products } = useContext(dataContex);
 
   const access = window.localStorage.getItem("accessToken");
@@ -21,8 +22,9 @@ export const Menu = () => {
     return <Navigate to="/" replace={true} />
   }
    //const[productos,setProductos] = useState();
-  console.log(products, '*****');
-   return(<>
+  console.log({products}, '*****');
+   return(<> 
+
    </>
    )
   /*
