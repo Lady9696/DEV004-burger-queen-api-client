@@ -1,35 +1,28 @@
-//import axiosBD from "../axios";
-//import axiosBD from "../axios";
-
-import "../menu/menu.css"
 //import { Navigate } from "react-router-dom";
-
+import "../menu/menu.css"
 import { useContext, useState } from "react";
 import { dataContex } from "../contex/eso";
 
 export const Menu = () => {
   const { products } = useContext(dataContex);
-  const [filterType, setFilterType] = useState(null);
-  //const [breakfastFilter, setBreakfastFilter] = useState(null)
+  /*inicializo la constante como null*/
+  const [filterType, setFilterType] = useState("Desayuno");
   /*
   access, user
   if (access === null && user === null) {
     return <Navigate to="/" replace={true} />
-  }
-*/
+  }*/
+  /*creo una funciòn que recibe un paràmetro que permite cambiar el valor a desayuno o almuerzo, esta funciòn
+  se encuentra dentro delos botones, y el cambio se produce al darle click*/
   const handleFiltro = (type) => {
     setFilterType(type);
- 
-
   };
-  const filteredProducts = filterType
-    ? products.filter((product) => product.type === filterType)
-    : products;
-  
-  
+  /*si el filtro es truthy, entonces se ejecutarà el filtrado el cual serà desayuno o almuerzo segùn el estado
+  de lo contario, es decir si es null, entonces se mostraran todos los productos*/
+  const filteredProducts = filterType ? products.filter((product) => product.type === filterType): products;
   return (   <div className="squareMenu">
-    <button className="buttonLunch" onClick={() => handleFiltro("Desayuno")}>Desayuno</button>
-    <button className="buttonFilter" onClick={() => handleFiltro("Almuerzo")}>Almuerzo</button>
+    <button className="buttonMenu"  id="buttonBreakfast" onClick={() => handleFiltro("Desayuno")}>Desayuno</button>
+    <button className="buttonMenu" id="buttonLunch" onClick={() => handleFiltro("Almuerzo")}>Almuerzo</button>
     {filteredProducts.map((product) => (
       <div key={product.id} className="containerCard">
         <form className="formmenu">
@@ -42,8 +35,6 @@ export const Menu = () => {
       </div>
     ))}
   </div>
-    
-  
   );
 };
   

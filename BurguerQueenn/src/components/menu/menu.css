@@ -49,9 +49,15 @@ h2{
     margin: 5%;
     
 }
-.buttonbreakfast{
+.buttonMenu{
     background-color: blueviolet;
-    width: 82px;
-    height: 80px;
+    width: 220px;
+    height: 62px;
+    border-radius:20px;
+    background-color: #F4B183;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 5%;
     
 }
+
