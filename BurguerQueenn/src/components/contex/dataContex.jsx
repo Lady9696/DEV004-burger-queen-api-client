@@ -13,9 +13,7 @@ const DataProvider = ({ children }) => {
   /*utilizo useState para utilizar el estado de los objetos, es decir la informaciòn*/
   /*el estadoproducts se inicializa con array vacio*/
   //VALORES DEL CONTEXTO
-  const [products, setProducts] = useState([{ "id": 1 }
-
-  ]);
+  const [products, setProducts] = useState([]);
   /*Access se inicializa con el token lamacenado localstorage*/
   const [access, setAccess] = useState(window.localStorage.getItem("accessToken"));
   /*user se inicializa con el user lamacenado localstorage, es decir el correo*/
@@ -49,7 +47,7 @@ const DataProvider = ({ children }) => {
       .then((response) => {
         console.log(response, '**************');
         //cuando se hace la solicitud, se guarda en la variable products
-        setProducts(response.products);
+        setProducts(response.data);
 
       })
       .catch((error) => {
