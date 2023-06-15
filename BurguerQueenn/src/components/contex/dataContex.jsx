@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
@@ -50,12 +51,12 @@ const DataProvider = ({ children }) => {
     axios
       .get("http://localhost:8080/products")
       .then((response) => {
-        console.log(response, "**************");
+        console.log( response );
         //cuando se hace la solicitud, se guarda en la variable products
         setProducts(response.data);
       })
       .catch((error) => {
-        console.error("Error en la solicitud:", error);
+        console.log("Error en la solicitud:", error);
       });
   }, []);
   /*permite configurar de manera global en encabezado en axios, encabezado que incluye el token y los datos del user en todas las

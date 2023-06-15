@@ -22,23 +22,23 @@ function Login() {
       password: passwordValue,
     };
 
-      /*se realiza la peticion con post y se le pasa el objeto con los values de los inputs*/
-      debugger
-  axios.post("http://localhost:8080/login", values)
-  /*si el usuario ingresa el correo y contraseña correctos, se va dirigir al menu*/
-  .then((response) => {
-    console.log(response, "hola");
-    window.localStorage.setItem("accessToken", response.data.accessToken);
-    window.localStorage.setItem("user", JSON.stringify(response.data.user));
-    setAccess("accessToken", response.data.accessToken);
-    setUser("user", JSON.stringify(response.data.user));
-    navigate("/menu");
-  }) /*de lo contario, la promesa es rechazada y permanecene login*/
-  .catch((error) => {
-    if (error.response.data === "Incorrect Password") {
-      alert("incorrect Pasword");
-    }
-  });
+    /*se realiza la peticion con post y se le pasa el objeto con los values de los inputs*/
+      
+    axios.post("http://localhost:8080/login", values)
+    /*si el usuario ingresa el correo y contraseña correctos, se va dirigir al menu*/
+      .then((response) => {
+        console.log(response, "hola");
+        window.localStorage.setItem("accessToken", response.data.accessToken);
+        window.localStorage.setItem("user", JSON.stringify(response.data.user));
+        setAccess("accessToken", response.data.accessToken);
+        setUser("user", JSON.stringify(response.data.user));
+        navigate("/menu");
+      }) /*de lo contario, la promesa es rechazada y permanecene login*/
+      .catch((error) => {
+        if (error.response.data === "Incorrect Password") {
+          alert("incorrect Pasword");
+        }
+      });
   };
 
 
