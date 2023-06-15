@@ -1,5 +1,5 @@
 import "../login/login.css";
-import { useState, useContext } from "react";
+import {  useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { dataContex } from "../contex/eso";
@@ -7,15 +7,7 @@ import { dataContex } from "../contex/eso";
 function Login() {
   
   const { setAccess, setUser } = useContext(dataContex);
-  /*
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-*/
-  // const [values, setValues] = useState({
-  //   email: "",
-  //   password: "",
-  // });
-
+  
   /*Se declara navigate para poder utilizar el hook useNavigate
    */ const navigate = useNavigate();
   /*se crea una funcion y dentro de ella un evento que me permite capturar los valores del input email y contraseña*/
@@ -30,10 +22,9 @@ function Login() {
       password: passwordValue,
     };
 
-    
-  /*se realiza la peticion con post y se le pasa el objeto con los values de los inputs*/
-  axios
-  .post("http://localhost:8080/login", values)
+      /*se realiza la peticion con post y se le pasa el objeto con los values de los inputs*/
+      debugger
+  axios.post("http://localhost:8080/login", values)
   /*si el usuario ingresa el correo y contraseña correctos, se va dirigir al menu*/
   .then((response) => {
     console.log(response, "hola");
