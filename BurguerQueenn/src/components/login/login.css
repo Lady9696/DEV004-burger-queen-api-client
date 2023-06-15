@@ -8,7 +8,8 @@
 }
 
 body {
-    background-color: bisque;
+    background-image: url(https://i.ibb.co/qRwgKDB/border.jpg);
+    display: flex;
 }
 
 /*width: 820px;
@@ -16,10 +17,10 @@ body {
 
 #root {
     display: flex;
+     margin-top: 15%;
     
-    margin-top: 0;
-    margin-bottom: 0;
     background-image: url(https://i.ibb.co/qRwgKDB/border.jpg);
+   
 }
 
 .squarecontainer {
@@ -28,7 +29,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 90%;
-    height: 70%;
+    height: 100%;
     margin-left: 4%;
     margin-top: 15%;
     margin-bottom: 20%;
@@ -84,7 +85,7 @@ h1 {
     width: 80%;
     height: 60%;
     margin-top: -14%;
-    margin-bottom: 8%;
+    margin-bottom: 35%;
     background: #F4B183;
     flex-wrap: nowrap;
 }

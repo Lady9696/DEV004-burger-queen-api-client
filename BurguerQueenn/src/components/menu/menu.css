@@ -4,36 +4,37 @@
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
-#root {
-    display: flex;
-    
-    margin-top: 0;
-    margin-bottom: 0;
-    background-image: url(https://i.ibb.co/qRwgKDB/border.jpg);
-}
 
 .squareMenu{
     display: flex;
-    background-color: rgb(197, 25, 25);
-    width: 50%;
-    margin: 5%;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-    
-   
-   
-    
+  background-color: white;
+  flex-wrap: wrap;
+  justify-content: center;
+ 
 }
-
-.productImage{
-    width: 40%;
-    height: 20%;
+.containerCard{
+    display: flex;
+    background-color: #F4B183;
+    width: 200px;
+    height: 200px;
+    margin-top: 9%;
+    margin-left: 5%;
+    margin-right:5% ;
     align-items: center;
+    border-radius: 20px; 
+}
+.productImage{
+    width: 50%;
+    height: 50%;
+    align-items: center;
+    margin: 3%;
 }
 .productName{
-    font-size: 150%;
-    align-self: center;
+    font-size: 120%;
+    text-align: center;
+    margin: 2%;
+    margin-top: 8%;
+    
  
     
 }
@@ -41,5 +42,10 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin: 8%;
+    
+}
+h2{
     margin: 5%;
+    
 }

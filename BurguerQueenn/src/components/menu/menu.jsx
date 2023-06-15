@@ -16,26 +16,30 @@ export const Menu = () => {
   }
   //const[productos,setProductos] = useState();
 
-  return (<><h1>Holaaaaa</h1> {products.map((product) => {
+  return (<div className="squareMenu">
+    {products.map((product) => {
+      const breakfast = product.filter(product => product.type === "Desayuno")
 
-    return (
-      <div key={product.id} className="squareMenu">
-        <form className="formmenu">
-          <div className="containerimageName">
-            <h2 className="productName">{product.name}</h2>
-            <img className="productImage" src={product.image} alt="burguer" ></img>
+      return (
+        <div key={product.id} className="containerCard">
+          <form className="formmenu">
+            <div className="containerimageName">
+              <h2 className="productName">{product.name}</h2>
+              <img className="productImage" src={product.image} alt="burguer" ></img>
 
-            <h2>{product.price}</h2>
-          </div>
+              <h2>{product.price}</h2>
+            </div>
 
 
-        </form>
-      </div>
+          </form>
+        </div>
 
-    );
+      );
 
-  })}
-  </>)
+    })}
+  </div>
+  
+  )
 
 }
 
