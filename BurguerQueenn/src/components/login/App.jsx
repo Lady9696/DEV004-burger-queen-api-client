@@ -27,7 +27,7 @@ function Login() {
     axios.post("http://localhost:8080/login", values)
     /*si el usuario ingresa el correo y contraseña correctos, se va dirigir al menu*/
       .then((response) => {
-        console.log(response, "hola");
+        //console.log('hola', response );
         window.localStorage.setItem("accessToken", response.data.accessToken);
         window.localStorage.setItem("user", JSON.stringify(response.data.user));
         setAccess("accessToken", response.data.accessToken);

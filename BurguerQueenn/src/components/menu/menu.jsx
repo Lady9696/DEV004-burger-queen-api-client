@@ -16,7 +16,7 @@ export const Menu = () => {
   }
   //const[productos,setProductos] = useState();
 
-  return (<>{products.map((product) => {
+  return (<><h1>Holaaaaa</h1> {products.map((product) => {
 
     return (
       <div key={product.id} className="squareMenu">
