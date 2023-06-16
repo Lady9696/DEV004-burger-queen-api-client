@@ -1,17 +1,17 @@
-//import { Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import "../menu/menu.css"
 import { useContext, useState } from "react";
 import { dataContex } from "../contex/eso";
 
 export const Menu = () => {
-  const { products } = useContext(dataContex);
+  const { products,access, user } = useContext(dataContex);
   /*inicializo la constante como null*/
   const [filterType, setFilterType] = useState("Desayuno");
-  /*
-  access, user
+  
+  
   if (access === null && user === null) {
     return <Navigate to="/" replace={true} />
-  }*/
+  }
   /*creo una funciòn que recibe un paràmetro que permite cambiar el valor a desayuno o almuerzo, esta funciòn
   se encuentra dentro delos botones, y el cambio se produce al darle click*/
   const handleFiltro = (type) => {
@@ -34,33 +34,24 @@ export const Menu = () => {
         </form>
       </div>
     ))}
+    <div className="containerOrder"> 
+      <div className="order">
+        <h2 className="itemsOrder">Cantidad</h2> 
+        <h2 className="itemsOrder" >Producto</h2> 
+        <h2 className="itemsOrder">Precio</h2> 
+        <div className="line"></div>
+        <div className="clientContainer">
+          <label htmlFor="client" className="labelClient">Cliente </label>
+          <input  className="nameClientInput"></input> 
+          
+          <button className="sentToCook">Cocina</button>
+           
+        </div> 
+      </div>
+      
+    </div>
+   
   </div>
-  );
-};
+  )
+}
   
-
-/*{lunchFilter === null ? (
-      products.map((product) => (
-        <div key={product.id} className="containerCard">
-          <form className="formmenu">
-            <div className="containerimageName">
-              <h2 className="productName">{product.name}</h2>
-              <img className="productImage" src={product.image} alt="burger" />
-              <h2>{product.price}</h2>
-            </div>
-          </form>
-        </div>
-      ))
-    ) : (
-      lunchFilter.map((product) => (
-        <div key={product.id} className="containerCard">
-          <form className="formmenu">
-            <div className="containerimageName">
-              <h2 className="productName">{product.name}</h2>
-              <img className="productImage" src={product.image} alt="burger" />
-              <h2>{product.price}</h2>
-            </div>
-          </form>
-        </div>
-      ))
-    )}*/

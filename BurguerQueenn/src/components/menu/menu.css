@@ -4,46 +4,49 @@
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
+button{
+    font-weight: bold;
+    font-size: 30px;
+    
+}
 
 .squareMenu{
     display: flex;
   background-color: white;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: -10%;
  
 }
 .containerCard{
     display: flex;
     background-color: #F4B183;
-    width: 200px;
-    height: 200px;
-    margin-top: 9%;
+    width: 25%;
+    height: 175px;
+    margin-top: 1%;
     margin-left: 5%;
     margin-right:5% ;
+    margin-bottom:2% ;
     align-items: center;
     border-radius: 20px; 
 }
 .productImage{
     width: 50%;
-    height: 50%;
     align-items: center;
     margin: 3%;
 }
 .productName{
+    
     font-size: 120%;
     text-align: center;
     margin: 2%;
     margin-top: 8%;
-    
- 
-    
 }
 .containerimageName{
     display: flex;
     align-items: center;
     flex-direction: column;
     margin: 8%;
-    
 }
 h2{
     margin: 5%;
@@ -58,6 +61,76 @@ h2{
     font-weight: bold;
     font-size: 30px;
     margin: 5%;
+}
+.containerOrder{
+    display: flex;
+    background-color: #F4B183;
+    width: 90%;
+    height: 405px;
+    margin:2%;
+    margin-bottom: 2%;
+    border-radius: 20px;
+    justify-content: center;
+}
+.order{
+    display: flex;
+    background-color: #FFF2CC;
+    width: 95%;
+    height: 380px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border-radius: 20px;
+}
+.itemsOrder{
+    font-size:130%;
+    margin-left: 3%;
+    margin-right: 2%;
+}
+.clientContainer{
+display: flex;
+flex-direction: column;
+margin-top: 5%;
+align-items: center;
+justify-content: center;
+margin-left: 6%;
+
+}
+.client{
+    font-size:150%;
+    margin: 5%;
+    font-weight: 600;
+}
+.nameClientInput{
+width: 200px;
+height: 50px;
+border-radius: 10px;
+}
+.labelClient{
+    margin-bottom: 8%;
+    font-weight: bold;
+    font-size: 25px;
     
 }
+.line{
+    background-color: rgb(155, 17, 17);
+    width: 3px;
+    height: 380px;
+    margin-left: 8%;
+}
+
+.sentToCook{
+    display: flex;
+    justify-content: center;
+     align-items: center;
+    flex-direction: column;
+    background-color:#FFD966;
+    width: 80%;
+    height: 20%;
+    border-radius: 20px;
+    margin-top: 70%;
+    margin-left: 8%;
+       
+    
+}
+
 
