@@ -20,6 +20,11 @@ export const Menu = () => {
   /*si el filtro es truthy, entonces se ejecutarà el filtrado el cual serà desayuno o almuerzo segùn el estado
   de lo contario, es decir si es null, entonces se mostraran todos los productos*/
   const filteredProducts = filterType ? products.filter((product) => product.type === filterType): products;
+  //Aqui voy a agregarle el onclick a las imagenes
+  const productSelected = (product) => {
+    console.log(product);
+
+  }
   return (   <div className="squareMenu">
     <button className="buttonMenu"  id="buttonBreakfast" onClick={() => handleFiltro("Desayuno")}>Desayuno</button>
     <button className="buttonMenu" id="buttonLunch" onClick={() => handleFiltro("Almuerzo")}>Almuerzo</button>
@@ -28,7 +33,7 @@ export const Menu = () => {
         <form className="formmenu">
           <div className="containerimageName">
             <h2 className="productName">{product.name}</h2>
-            <img className="productImage" src={product.image} alt="burger" />
+            <img className="productImage" onClick={()=> productSelected(product) } src={product.image} alt="burger" />
             <h2>{product.price}</h2>
           </div>
         </form>
