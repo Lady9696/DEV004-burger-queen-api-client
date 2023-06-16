@@ -14,6 +14,7 @@ const DataProvider = ({ children }) => {
   /*el estadoproducts se inicializa con array vacio*/
   //VALORES DEL CONTEXTO
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
   /*Access se inicializa con el token lamacenado localstorage*/
   const [access, setAccess] = useState(
     window.localStorage.getItem("accessToken")
@@ -27,11 +28,11 @@ const DataProvider = ({ children }) => {
   
   const value = useMemo(() => {
     //aqui devuelve las variables que utilizo, pero no hace càlculo
-    return {products, setAccess, setUser, access, user, setProducts}
+    return {products, setAccess, setUser, access, user, setProducts, cart, setCart}
     //el segundo paràmetro se pasan las variables.
     //si alguna de estas variables cambia se actualiza el valor del value, sino se cambia se utiliza el valor por defecto
     // memorizado
-  }, [access, products, user]);
+  }, [access, products, user, cart]);
 
   useEffect(() => {
     //si user y access existen, se actualiza los common headers, en Authorization se incluye el token
