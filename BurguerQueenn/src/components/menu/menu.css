@@ -14,6 +14,49 @@ p{
     text-align: left;
     background-color: aqua;
 }
+ion-icon[name="add-outline"] {
+    font-size: 40px; /* Modifica el tamaño del icono "+" */
+    color: black; /* Cambia el color del icono "+" */
+    margin: 0%;
+  }
+  
+  ion-icon[name="remove-outline"] {
+    font-size: 40px; /* Modifica el tamaño del icono "-" */
+    color: black; /* Cambia el color del icono "-" */
+     /* Cambia el color de fondo del icono "-" */
+    /* Agrega un borde al icono "-" */
+    margin: 0;
+  }
+  .Container-decrease{
+    background-color: #FFD966;
+    width: 90px;
+    height: 55px;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el icono "-" */
+    align-items: center; 
+    margin-right: 25%;
+    border: 1px solid black;
+    margin-top: 10%;
+    border-radius: 15px;
+  }
+  .Container-increase{
+    width: 90px;
+    height: 55px;
+    background-color: #FFD966;
+    border: 1px solid black;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-left: 0%;
+    margin-top: 10%;
+    border-radius: 15px;
+  }
+  .buttonGroup{
+    display: flex;
+    margin-bottom: 4%;
+    justify-content: space-between;
+    
+}
 
 .squareMenu{
     display: flex;
@@ -26,58 +69,65 @@ p{
 .ContainerOrderCliente{
     display: flex;
     flex-direction: row;
-    
-    margin-left: -25%;
+    background-color: violet;
+    margin-left: 0%;
+    width: 720px;
+    height: 850px;
+    margin-top: 0;
 
 }
 .containerProducts{
     justify-content: left; 
-    background-color: red;
+    background-color:antiquewhite;
     display: flex;
     flex-direction: column;
+    height: 95%;
    }
-   .containerPrice{
-    font-size: x-large;
-    margin:0%;
+   
+   .buttonContainer{
     display: flex;
-    flex-direction: column;
+  background-color: green;
+  margin: 0;
+  padding: 0;
+  width: 60%;
+  height: 90px;
+  justify-content: space-between;
+  
 }
+
+
 .containerCard{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    padding: 0;
     background-color: #F4B183;
-    width: 30%;
-    height: 150px;
-    margin-top: 1%;
-    margin-left: 0%;
-    margin-right:0% ;
-    margin-bottom:0% ;
+    width: 60%;
+    height: 400px;
+    margin-top: 3%;
     align-items: center;
-    border-radius: 20px; 
-} .Price{
-    margin-top: 5%;
-    background-color: blueviolet;
-}
+    border-radius: 20px;
+} 
 
 .productImage{
-    width: 50%;
+    width: 30%;
     align-items: center;
-    margin: 3%;
+    margin: 2%;
+    margin-bottom: 0%;
 }
 .productName{
     
-    font-size: 120%;
+    font-size: 150%;
     text-align: center;
     margin: 2%;
-    margin-top: 8%;
+    margin-top: 5%;
+    font-weight: bolder;
 }
-.containerimageName{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin: 8%;
+.productPrice{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 2%;
 }
+
 h2{
     margin: 5%;
     
@@ -111,11 +161,8 @@ h2{
     margin-bottom: 2%;
     border-radius: 20px;
 }
-.itemsOrder{
-    font-size:130%;
-    margin-left: 3%;
-    margin-right: 2%;
-}
+
+/*
 .clientContainer{
 display: flex;
 flex-direction: column;
@@ -164,3 +211,4 @@ border-radius: 10px;
 }
 
 
+*/
