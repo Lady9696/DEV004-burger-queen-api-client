@@ -1,4 +1,4 @@
-import axios from "axios";
+
 import { Navigate } from "react-router-dom";
 import "../menu/menu.css"
 import {  useContext, useState } from "react";
@@ -37,48 +37,36 @@ export const Menu = () => {
 
     
   }
-  
-  
-
-
-  
-  
-  
-  
-  return (   <div className="squareMenu">
+  return ( <div className="squareMenu">
+   
     <button className="buttonMenu"  id="buttonBreakfast" onClick={() => handleFiltro("Desayuno")}>Desayuno</button>
     <button className="buttonMenu" id="buttonLunch" onClick={() => handleFiltro("Almuerzo")}>Almuerzo</button>
-    {filteredProducts.map((product) => (
-      <div key={product.id} className="containerCard">
-        <form className="formmenu">
-          <div className="containerimageName">
-            <h2 className="productName">{product.name}</h2>
-            <img className="productImage" onClick={()=> productSelected(product)} src={product.image} alt="burger" />
-            <h2>{product.price}</h2>
+    <div className="ContainerOrderCliente">
+      <div className="containerProducts">
+        <p> Producto </p> 
+        {filteredProducts.map((product) =>(
+          <div key={product.id}  className="containerCard">
+            <img className="productImage" onClick={()=> productSelected(product)} src={product.image} alt="burger"/>
+            {product.name}
           </div>
-        </form>
-      </div>
-    ))}
-    <div className="containerOrder"> 
-      <div  className="order">  
-        {cart.map((product) => (
-          <div key={product.id} className="productList">
-            <div className="itemsOrder">Cantidad</div> 
-            <div className="itemsOrder">Producto: {product.name}</div> 
-            <div className="itemsOrder">Precio: {product.price}</div>
-          </div>  
         ))}
-        <div className="line"></div>
-        <div className="clientContainer">
-          <label htmlFor="client" className="labelClient">Cliente </label>
-          <input className="nameClientInput" type="text" ></input> 
-          <button type= "submit" className="sentToCook" >Cocina</button>
-        </div> 
-      </div> 
+      </div>
+      <div className="containerPrice">
+        <p> Price </p> 
+        
+        {filteredProducts.map((product) =>(
+          <div key={product.id}  className="Price">
+            
+            {product.price}
+          </div>
+        ))}
+      </div>
+          
+
+
     </div>
-   
   </div>
-  )
+  );
 }
   
 
