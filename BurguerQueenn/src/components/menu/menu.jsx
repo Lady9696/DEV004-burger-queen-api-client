@@ -48,15 +48,16 @@ export const Menu = () => {
           {filteredProducts.map((product) => (
             <div key={product.id} className="containerCard">
               <div className="productName">{product.name}</div>
-              <img className="productImage" onClick={() => productSelected(product)} src={product.image} alt="burger" />
+              <img className="productImage" src={product.image} alt="burger" />
               <div className="productPrice">{product.price}</div>
               
               <div className="buttonGroup">
+                
+                <div className="Container-increase">
+                  <ion-icon name="add-outline" onClick={()=> productSelected(product)} ></ion-icon>
+                </div>
                 <div className="Container-decrease">
                   <ion-icon name="remove-outline" onClick={handleDecrease}></ion-icon>
-                </div>
-                <div className="Container-increase">
-                  <ion-icon name="add-outline" onClick={handleIncrease}></ion-icon>
                 </div>
                   
                 

@@ -28,18 +28,6 @@ ion-icon[name="add-outline"] {
     margin: 0;
   }
   .Container-decrease{
-    background-color: #FFD966;
-    width: 90px;
-    height: 55px;
-    display: flex;
-    justify-content: center; /* Centra horizontalmente el icono "-" */
-    align-items: center; 
-    margin-right: 25%;
-    border: 1px solid black;
-    margin-top: 10%;
-    border-radius: 15px;
-  }
-  .Container-increase{
     width: 90px;
     height: 55px;
     background-color: #FFD966;
@@ -50,6 +38,23 @@ ion-icon[name="add-outline"] {
     margin-left: 0%;
     margin-top: 10%;
     border-radius: 15px;
+    
+  }
+  .Container-increase{
+    background-color: #FFD966;
+    width: 90px;
+    height: 55px;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el icono "-" */
+    align-items: center; 
+    margin-right: 25%;
+    border: 1px solid black;
+    margin-top: 10%;
+    border-radius: 15px;
+
+
+
+   
   }
   .buttonGroup{
     display: flex;

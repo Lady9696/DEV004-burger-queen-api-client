@@ -1,6 +1,8 @@
 import { useState } from "react";
-
-export const ItemCount = () => {
+const productSelected = (product) => {
+  setCart([...cart, product])
+}
+export const productSelected = () => {
   const [count, setCount] = useState(0);
   
   const decrease =() => {
