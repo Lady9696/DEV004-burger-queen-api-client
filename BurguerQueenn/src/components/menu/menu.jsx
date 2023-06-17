@@ -43,21 +43,13 @@ export const Menu = () => {
         <p> Producto </p> 
         {filteredProducts.map((product) =>(
           <div key={product.id}  className="containerCard">
-            <img className="productImage" onClick={()=> productSelected(product)} src={product.image} alt="burger"/>
             {product.name}
-          </div>
-        ))}
-      </div>
-      <div className="containerPrice">
-        <p> Price </p> 
-        
-        {filteredProducts.map((product) =>(
-          <div key={product.id}  className="Price">
-            
+            <img className="productImage" onClick={()=> productSelected(product)} src={product.image} alt="burger"/>
             {product.price}
           </div>
         ))}
       </div>
+      
           
 
 
