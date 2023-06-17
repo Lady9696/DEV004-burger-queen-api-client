@@ -41,9 +41,15 @@ export const Menu = () => {
   
   
   const removeFromCart = (product) => {
-    
+    const updatedCount = { ...count };
+    if (updatedCount[product.id] > 0) {
+      updatedCount[product.id] -= 1;
+      const updatedCart = cart.slice(0, -1);
+      setCart(updatedCart);
+      setCount(updatedCount);
     
   }
+}
   
   /*
   if (count > 0) {
@@ -70,7 +76,7 @@ export const Menu = () => {
                   
                   <ion-icon name="add-outline" onClick={()=>AddToCart(product, count)}></ion-icon>
                 </div>
-                <p> <p>{count[product.id] || 0}</p></p>
+                <p> {count[product.id] || 0}</p>
                 <div className="Container-decrease">
                   
                   <ion-icon name="remove-outline" onClick={() => removeFromCart(product)}></ion-icon>
