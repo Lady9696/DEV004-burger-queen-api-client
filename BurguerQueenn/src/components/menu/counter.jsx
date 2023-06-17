@@ -1,8 +1,6 @@
 import { useState } from "react";
-const productSelected = (product) => {
-  setCart([...cart, product])
-}
-export const productSelected = () => {
+
+export const ItemCount = () => {
   const [count, setCount] = useState(0);
   
   const decrease =() => {
