@@ -4,9 +4,11 @@ import "../menu/menu.css"
 import {  useContext, useState } from "react";
 import { dataContex } from "../contex/eso";
 import { useProducts } from "../services/useProducts";
-import {ItemCount} from "../menu/counter.jsx"
+
 export const Menu = () => {
-  const { access, user, cart, setCart } = useContext(dataContex);
+  const { access, user,cart, setCart} = useContext(dataContex);
+  const [count, setCount] = useState(0);
+  
   const {productsPromiseStatus, products} = useProducts()
   /*inicializo la constante como null*/
   const [filterType, setFilterType] = useState("Desayuno");
@@ -24,20 +26,22 @@ export const Menu = () => {
   de lo contario, es decir si es null, entonces se mostraran todos los productos*/
   const filteredProducts = filterType ? products.filter((product) => product.type === filterType): products;
   //Aqui voy a agregarle el onclick a las imagenes
-  const productSelected = (product) => {
-    setCart([...cart, product])
-  }
-  //Aquì hagolos manejadores para aumentar y disminuir const handleDecrease = () => {
-  // Llamar a la función decrease de ItemCount
-  const handleDecrease = () => {
-    // Llamar a la función decrease de ItemCount
-  };
-  
-  const handleIncrease = () => {
-    // Llamar a la función increase de ItemCount
-  };
-  
 
+  const AddToCart = () => {
+    setCart([...cart, product])
+    setCount(count+1)
+    console.log('producto agg'+ product)
+  }
+  
+  const removeFromCart = () => {
+    if (count > 0) {
+      const updatedCart = cart.slice(0, -1);
+      setCart(updatedCart);
+      setCount(count - 1);
+      
+    }
+  }
+  
   return (
     <div className="squareMenu">
       <button className="buttonMenu" id="buttonBreakfast" onClick={() => handleFiltro("Desayuno")}>Desayuno</button>
@@ -52,15 +56,14 @@ export const Menu = () => {
               <div className="productPrice">{product.price}</div>
               
               <div className="buttonGroup">
-                
                 <div className="Container-increase">
-                  <ion-icon name="add-outline" onClick={()=> productSelected(product)} ></ion-icon>
+                  
+                  <ion-icon name="add-outline"></ion-icon>
                 </div>
                 <div className="Container-decrease">
-                  <ion-icon name="remove-outline" onClick={handleDecrease}></ion-icon>
-                </div>
                   
-                
+                  <ion-icon name="remove-outline"></ion-icon>
+                </div>
               </div>
             </div>
           ))}
@@ -68,9 +71,4 @@ export const Menu = () => {
       </div>
     </div>
   );
-};
-
-
-  
-
-              
+}
