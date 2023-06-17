@@ -33,9 +33,6 @@ export const Menu = () => {
   */
   const productSelected = (product) => {
     setCart([...cart, product])
-    
-
-    
   }
   return ( <div className="squareMenu">
    
