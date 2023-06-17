@@ -30,8 +30,8 @@ function Login() {
         //console.log('hola', response );
         window.localStorage.setItem("accessToken", response.data.accessToken);
         window.localStorage.setItem("user", JSON.stringify(response.data.user));
-        setAccess("accessToken", response.data.accessToken);
-        setUser("user", JSON.stringify(response.data.user));
+        setAccess(response.data.accessToken);
+        setUser(JSON.stringify(response.data.user));
         navigate("/menu");
       }) /*de lo contario, la promesa es rechazada y permanecene login*/
       .catch((error) => {

@@ -1,11 +1,13 @@
-//import axios from "axios";
+import axios from "axios";
 import { Navigate } from "react-router-dom";
 import "../menu/menu.css"
 import {  useContext, useState } from "react";
 import { dataContex } from "../contex/eso";
+import { useProducts } from "../services/useProducts";
 
 export const Menu = () => {
-  const { products,access, user, cart, setCart } = useContext(dataContex);
+  const { access, user, cart, setCart } = useContext(dataContex);
+  const {productsPromiseStatus, products} = useProducts()
   /*inicializo la constante como null*/
   const [filterType, setFilterType] = useState("Desayuno");
   

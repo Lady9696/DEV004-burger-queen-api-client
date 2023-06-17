@@ -47,19 +47,8 @@ const DataProvider = ({ children }) => {
     //si alguno de los dos cambia, el efecto se ejecuta y se actualiza los datos de la cabecera
   }, [user, access]);
   //Permite ejecutar operaciones asicrònicas, en este caso obtener productos
-  useEffect(() => {
-    console.log("esta ela promesa");
-    axios
-      .get("http://localhost:8080/products")
-      .then((response) => {
-        console.log( response );
-        //cuando se hace la solicitud, se guarda en la variable products
-        setProducts(response.data);
-      })
-      .catch((error) => {
-        console.log("Error en la solicitud:", error);
-      });
-  }, []);
+  //hacer la petiicon en el menu
+  
   /*permite configurar de manera global en encabezado en axios, encabezado que incluye el token y los datos del user en todas las
   las solicitudes de la app, es decir que antes de hacer cualquier solciitud debo estar verificada.
   
