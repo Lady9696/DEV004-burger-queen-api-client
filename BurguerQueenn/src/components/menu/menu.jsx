@@ -93,7 +93,7 @@ export const Menu = () => {
       <button className="buttonMenu" id="buttonLunch" onClick={() => handleFiltro("Almuerzo")}>Almuerzo</button>
       <div className="ContainerOrderCliente">
         <div className="containerProducts">
-          <p>Producto</p>
+        
           {filteredProducts.map((product) => (
             <div key={product.id} className="containerCard">
               <p>{product.name}</p>
@@ -137,7 +137,11 @@ export const Menu = () => {
               </div>
               
             ))}
-            <div> <p className="item">{calculateTotal()}</p></div>
+            <div className="total-container" > <p className="total">Total</p>
+              <p className="itemTotal">{calculateTotal()}</p>
+              <button className="button-cook" id="buttonSendToCook" >Enviar pedido</button>
+
+            </div>
           </div>
         </div>
 
