@@ -20,6 +20,7 @@ export const Menu = () => {
   /*creo una funciòn que recibe un paràmetro que permite cambiar el valor a desayuno o almuerzo, esta funciòn
   se encuentra dentro delos botones, y el cambio se produce al darle click*/
   const handleFiltro = (type) => {
+    
     setFilterType(type);
   };
   /*si el filtro es truthy, entonces se ejecutarà el filtrado el cual serà desayuno o almuerzo segùn el estado
@@ -29,7 +30,20 @@ export const Menu = () => {
 
   const AddToCart = (product, count) => {
     
-    setCart([...cart, product])
+    setCart((prevCart) => {
+      const existingProduct = prevCart.find((item) => item.id === product.id);
+  
+      if (existingProduct) {
+        return prevCart.map((item) => {
+          if (item.id === product.id) {
+            return { ...item, quantity: item.quantity + 1 };
+          }
+          return item;
+        });
+      }
+  
+      return [...prevCart, { ...product, quantity: 1 }];
+    });
     setCount((prevCount) => {
       const updatedCount = { ...prevCount };
       updatedCount[product.id] = (updatedCount[product.id] || 0) + 1;
@@ -41,16 +55,31 @@ export const Menu = () => {
   
   
   const removeFromCart = (product) => {
-    const updatedCount = { ...count };
-    if (updatedCount[product.id] > 0) {
-      updatedCount[product.id] -= 1;
-      const updatedCart = cart.slice(0, -1);
-      setCart(updatedCart);
-      setCount(updatedCount);
-    
-    }
+    setCart((prevCart) => {
+      const updatedCart = prevCart.map((item) => {
+        if (item.id === product.id && item.quantity > 0) {
+          return { ...item, quantity: item.quantity - 1 };
+        }
+        return item;
+      });
+  
+      return updatedCart.filter((item) => item.quantity > 0);
+    });
+  
+    setCount((prevCount) => {
+      const updatedCount = { ...prevCount };
+      updatedCount[product.id] = (updatedCount[product.id] || 0) - 1;
+      return updatedCount;
+    });
   }
   
+  const calculateTotal = () => {
+    const total = cart.reduce((accumulator, product) => {
+      return accumulator + product.price * product.quantity;
+    }, 0);
+  
+    return total;
+  };
   /*
   if (count > 0) {
     setCart(updatedCart);
@@ -76,7 +105,7 @@ export const Menu = () => {
                   
                   <ion-icon name="add-outline" onClick={()=>AddToCart(product, count)}></ion-icon>
                 </div>
-                <p> {count[product.id] || 0}</p>
+                
                 <div className="Container-decrease">
                   
                   <ion-icon name="remove-outline" onClick={() => removeFromCart(product)}></ion-icon>
@@ -85,6 +114,41 @@ export const Menu = () => {
             </div>
           ))}
         </div>
+        <div className="order">
+          <div className="tile">
+            <h2>Información del pedido</h2>
+            <div className="clientContainer">
+              <label htmlFor="client" className="labelClient">Cliente </label>
+              <input className="nameClientInput" type="text" />
+            </div>
+            <div className="itemProducts">
+              <p className="item-title">Producto</p>
+              <p className="item-title">Cantidad</p>
+              <p className="item-title">Precio</p>
+              <p className="item-title">Total</p>
+            </div>
+            {cart.map((product) => (
+              <div className="productRow" key={product.id}>
+                <p className="item">{product.name}</p>
+                <p className="item"> {count[product.id] || 0}</p>
+                <p className="item">{product.price}</p>
+                <p className="item">{product.price * product.quantity}</p>
+               
+              </div>
+              
+            ))}
+            <div> <p className="item">{calculateTotal()}</p></div>
+          </div>
+        </div>
+
+        
+
+
+
+
+
+
+
       </div>
     </div>
   );
