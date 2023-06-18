@@ -48,8 +48,8 @@ export const Menu = () => {
       setCart(updatedCart);
       setCount(updatedCount);
     
+    }
   }
-}
   
   /*
   if (count > 0) {
