@@ -114,35 +114,30 @@ export const Menu = () => {
             </div>
           ))}
         </div>
-        <div className="order">
-          <div className="tile">
-            <h2>Información del pedido</h2>
-            <div className="clientContainer">
-              <label htmlFor="client" className="labelClient">Cliente </label>
-              <input className="nameClientInput" type="text" />
-            </div>
-            <div className="itemProducts">
-              <p className="item-title">Producto</p>
-              <p className="item-title">Cantidad</p>
-              <p className="item-title">Precio</p>
-              <p className="item-title">Total</p>
-            </div>
-            {cart.map((product) => (
-              <div className="productRow" key={product.id}>
-                <p className="item">{product.name}</p>
-                <p className="item"> {count[product.id] || 0}</p>
-                <p className="item">{product.price}</p>
-                <p className="item">{product.price * product.quantity}</p>
-               
-              </div>
-              
-            ))}
-            <div className="total-container" > <p className="total">Total</p>
-              <p className="itemTotal">{calculateTotal()}</p>
-              <button className="button-cook" id="buttonSendToCook" >Enviar pedido</button>
+        <div className="itemProducts">
+          <table>
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Total</th>
 
-            </div>
-          </div>
+              </tr>
+            </thead> 
+            <tbody>  
+              
+              {cart.map((product) => (
+                <tr key={product.id}> 
+                  <td>{product.name}</td>
+                  <td>{count[product.id] || 0}</td>
+                  <td>{product.price}</td>
+                  <td>{product.price * product.quantity}</td>
+                </tr> 
+              ))}
+             
+            </tbody>
+          </table>
         </div>
 
         
