@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+button{
+    font-weight: bold;
+    font-size: 30px;
+    
+}
+h2{
+    font-size: 200%;
+}
+p{
+    font-size: 180%;
+    text-align: center;
+    margin-top: 4%;
+    margin: 2%;
+    font-weight: bold;
+    
+}
+.squareKitchen{
+    display: flex;
+  background-color: white;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: -10%;
+  width: 100%;
+  height: auto;
+ 
+}
+.order-container{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    background-color: #F4B183;
+    width: 95%;
+    
+    margin-top: 3%;
+    align-items: center;
+    border-radius: 20px;
+}
+.delivered {
+    background-color: lightgreen;
+    /* Otros estilos para las órdenes entregadas */
+  }

@@ -1,4 +1,4 @@
-
+import moment from 'moment';
 import { Navigate, Link} from "react-router-dom";
 import "../menu/menu.css"
 import {  useContext, useState } from "react";
@@ -97,15 +97,15 @@ export const Menu = () => {
   const handleSendToCook = () => {
     //console.log(cart, 'este es mi carrito con productos elegidos');
     const currentDate = new Date();
-    const date = currentDate.toLocaleDateString(); // Obtener la fecha en formato local
-    const time = currentDate.toLocaleTimeString();
+    const formattedDate = moment(currentDate).format('YYYY-MM-DD HH:mm:ss');
     const order = {
       clientName: clientName,
-      date: date,time,
+      date: formattedDate,
       products: cart.map((product) => ({
         name: product.name,
         quantity: product.quantity,
         price: product.price,
+        status: 'pending',
       })),
     };
   
@@ -127,7 +127,7 @@ export const Menu = () => {
       
       <button className="buttonMenu" id="buttonLunch" onClick={() => handleFiltro("Almuerzo")}>Almuerzo</button>
       <button className="buttonMenu" id="buttonBreakfast" > <Link to="/kitchen">Kitchen</Link>
-      Kitchen</button>
+      </button>
       <div className="ContainerOrderCliente">
         <div className="containerProducts">
         
