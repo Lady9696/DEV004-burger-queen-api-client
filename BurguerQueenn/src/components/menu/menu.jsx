@@ -115,13 +115,18 @@ export const Menu = () => {
           ))}
         </div>
         <div className="containerTable ">
+          <div className="clientContainer">
+            <p>Información del pedido</p>
+            <label htmlFor="client" className="labelClient">Cliente </label>
+            <input className="nameClientInput" type="text" ></input> 
+          </div>
           <table>
             <thead>
               <tr>
-                <th>Producto</th>
-                <th>Cantidad</th>
-                <th>Precio</th>
-                <th>Total</th>
+                <th className="headerCell">Producto</th>
+                <th className="headerCell">Cantidad</th>
+                <th className="headerCell">Precio</th>
+                <th className="headerCell">Total</th>
 
               </tr>
             </thead> 
@@ -129,15 +134,19 @@ export const Menu = () => {
               
               {cart.map((product) => (
                 <tr key={product.id}> 
-                  <td>{product.name}</td>
-                  <td>{count[product.id] || 0}</td>
-                  <td>{product.price}</td>
-                  <td>{product.price * product.quantity}</td>
+                  <td className="dataCell">{product.name}</td>
+                  <td className="dataCell">{count[product.id] || 0}</td>
+                  <td className="dataCell">{product.price}</td>
+                  <td className="dataCell">{product.price * product.quantity}</td>
                 </tr> 
               ))}
              
             </tbody>
           </table>
+          <div className="total-container">
+            <p className="total">{calculateTotal}</p>
+          </div>
+          <button className="buttonMenu" id="buttonLunch">Enviar pedido</button>
         </div>
 
         
