@@ -6,7 +6,7 @@ import { dataContex } from "../contex/eso";
 export const Kitchen = () => {
   const [orders, setOrders] = useState([]);
   const [orderSelected, SetOrderSelected] = useState(null);
-
+  const [filterType, setFilterType] = useState('pending');
 
 
   useEffect(() => {
@@ -48,23 +48,40 @@ export const Kitchen = () => {
       });
 
   }
+  const showOrdersByStatus = (status) => {
+    setFilterType(status);
+  };
 
+  const filteredOrders = orders.filter((order) => {
+    if (filterType === "pending") {
+      return order.status === "pending";
+    } else if (filterType === "delivered") {
+      return order.status === "delivered";
+    }
+    return true; // Si no hay filtro seleccionado, muestra todas las órdenes
+  });
+
+  
 
 
   return (
     <div className="squareKitchen">
       <div className="orders">
         <p>Pedidos</p>
-        <button className="buttonMenu" id="buttonBreakfast" > Done</button>
-
+        <button className="buttonMenu" onClick={() => showOrdersByStatus("pending")}>
+          Pendientes
+        </button>      
+        <button className="buttonMenu" onClick={() => showOrdersByStatus("delivered")}>
+          Entregados
+        </button>
         <button className="buttonMenu" id="buttonBreakfast" > <Link to="/menu">Menu</Link>
         </button>
       </div>
       <div className="order-show">
-        {orders.map((order) => (
+        {filteredOrders.map((order) => (
           <div  className={`order-container ${order.status === "delivered" ? "delivered" : ""}`}
-          key={order.id}
-          onClick={() => changeOrderStatus(order.id)} >
+            key={order.id}
+            onClick={() => changeOrderStatus(order.id)} >
             <p className="item">Cliente: {order.clientName}</p>
             <p className="item">Fecha: {order.date}</p>
             <p className="item">Hora: {order.time}</p>
