@@ -21,7 +21,7 @@ p{
     
 }
 table{
-    background-color:white;
+    background-color:#F4B183;
     margin-top: 10%;
 }
 .headerCell {
@@ -92,7 +92,7 @@ ion-icon[name="add-outline"] {
 
 .squareMenu{
     display: flex;
-  background-color: red;
+  background-color: white;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: -10%;
@@ -192,8 +192,9 @@ h2{
     display: flex;
   flex-direction: column;
   width: 100%;
-  height: 60%;
+  height: auto;
   background-color: white;
+  padding: 2%;
   border-radius: 20px;
   margin-top: 2%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -248,13 +249,14 @@ border-radius: 10px;
     height: 8%;
     border-radius: 20px;
     margin-top: 5%;
-    
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     
 }
 .total  {
     font-size: 200%;
     background-color: white;
     border-radius: 20px;
+   
 }
 
 
@@ -262,9 +264,10 @@ border-radius: 10px;
 
 
 #send-to-cook{
-    margin-top: 30%;
+   margin: 10%;
     margin-left: 43%;
-    margin-bottom: 10%;
+    margin-bottom: 15%;
+    background-color: #FFD966;
 
 }
 
