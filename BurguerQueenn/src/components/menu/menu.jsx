@@ -144,9 +144,11 @@ export const Menu = () => {
             </tbody>
           </table>
           <div className="total-container">
-            <p className="total">{calculateTotal}</p>
+            <p>Total a pagar</p>
+            <p className="total">{calculateTotal()}</p>
+            <button className="buttonMenu" id="send-to-cook">Enviar pedido</button>
           </div>
-          <button className="buttonMenu" id="buttonLunch">Enviar pedido</button>
+          
         </div>
 
         
