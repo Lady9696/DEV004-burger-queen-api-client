@@ -95,10 +95,13 @@ export const Menu = () => {
   /*aquì debo hacer el manejador de la peticion */
  
   const handleSendToCook = () => {
-    console.log(cart, 'este es mi carrito con productos elegidos');
-    
+    //console.log(cart, 'este es mi carrito con productos elegidos');
+    const currentDate = new Date();
+    const date = currentDate.toLocaleDateString(); // Obtener la fecha en formato local
+    const time = currentDate.toLocaleTimeString();
     const order = {
       clientName: clientName,
+      date: date,time,
       products: cart.map((product) => ({
         name: product.name,
         quantity: product.quantity,
@@ -150,7 +153,7 @@ export const Menu = () => {
             <p>Información del pedido</p>
             <label htmlFor="client" className="labelClient">Cliente </label>
             <input className="nameClientInput" type="text"value={clientName}
-        onChange={handleInputChange} placeholder="Ingrese el nombre del cliente" ></input> 
+              onChange={handleInputChange} placeholder="Ingrese el nombre del cliente" ></input> 
           </div>
           <table>
             <thead>
