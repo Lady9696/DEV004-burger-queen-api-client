@@ -114,7 +114,7 @@ export const Menu = () => {
             </div>
           ))}
         </div>
-        <div className="itemProducts">
+        <div className="containerTable ">
           <table>
             <thead>
               <tr>
