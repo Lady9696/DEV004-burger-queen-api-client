@@ -41,7 +41,7 @@ p{
     align-items: center;
     border-radius: 20px;
 }
-.delivered {
+.done {
     background-color: lightgreen;
     /* Otros estilos para las órdenes entregadas */
   }
