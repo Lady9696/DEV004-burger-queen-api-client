@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Login from "./components/login/App.jsx";
 import { Menu } from './components/menu/menu.jsx';
-import {Waiter} from './components/waiter/waiter.jsx'
+import {Kitchen} from './components/kitchen/kitchen.jsx'
 
 
 export const Router = () => {
@@ -10,7 +10,7 @@ export const Router = () => {
       <Routes>
         <Route path="/" element ={<Login></Login>}/>
         <Route path="/menu" element ={<Menu></Menu>}/>
-        <Route path="/waiters" element ={<Waiter></Waiter>}/>
+        <Route path="/kitchen" element ={<Kitchen></Kitchen>}/>
 
       </Routes>
     </div>

@@ -1,5 +1,5 @@
 
-import { Navigate } from "react-router-dom";
+import { Navigate, Link} from "react-router-dom";
 import "../menu/menu.css"
 import {  useContext, useState } from "react";
 import { dataContex } from "../contex/eso";
@@ -124,7 +124,10 @@ export const Menu = () => {
   return (
     <div className="squareMenu">
       <button className="buttonMenu" id="buttonBreakfast" onClick={() => handleFiltro("Desayuno")}>Desayuno</button>
+      
       <button className="buttonMenu" id="buttonLunch" onClick={() => handleFiltro("Almuerzo")}>Almuerzo</button>
+      <button className="buttonMenu" id="buttonBreakfast" > <Link to="/kitchen">Kitchen</Link>
+      Kitchen</button>
       <div className="ContainerOrderCliente">
         <div className="containerProducts">
         
