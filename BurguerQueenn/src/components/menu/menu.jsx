@@ -4,6 +4,7 @@ import "../menu/menu.css"
 import {  useContext, useState } from "react";
 import { dataContex } from "../contex/eso";
 import { useProducts } from "../services/useProducts";
+import axios from "axios";
 
 export const Menu = () => {
   const { access, user,cart, setCart} = useContext(dataContex);
@@ -12,6 +13,7 @@ export const Menu = () => {
   const {productsPromiseStatus, products} = useProducts()
   /*inicializo la constante como null*/
   const [filterType, setFilterType] = useState("Desayuno");
+  const [clientName, setClientName] = useState('');
   
   
   if (access === null && user === null) {
@@ -80,12 +82,41 @@ export const Menu = () => {
   
     return total;
   };
+  const handleInputChange = (event) => {
+    setClientName(event.target.value);
+  };
+  
   /*
   if (count > 0) {
     setCart(updatedCart);
     console.log('producto eliminado'+ product)
     const updatedCart = cart.filter((item) => item.id !== product.id);
   */
+  /*aquì debo hacer el manejador de la peticion */
+ 
+  const handleSendToCook = () => {
+    console.log(cart, 'este es mi carrito con productos elegidos');
+    
+    const order = {
+      clientName: clientName,
+      products: cart.map((product) => ({
+        name: product.name,
+        quantity: product.quantity,
+        price: product.price,
+      })),
+    };
+  
+    axios.post("http://localhost:8080/orders", order)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  
+  
+  
   
   return (
     <div className="squareMenu">
@@ -118,7 +149,8 @@ export const Menu = () => {
           <div className="clientContainer">
             <p>Información del pedido</p>
             <label htmlFor="client" className="labelClient">Cliente </label>
-            <input className="nameClientInput" type="text" ></input> 
+            <input className="nameClientInput" type="text"value={clientName}
+        onChange={handleInputChange} placeholder="Ingrese el nombre del cliente" ></input> 
           </div>
           <table>
             <thead>
@@ -146,7 +178,7 @@ export const Menu = () => {
           <div className="total-container">
             <p>Total a pagar</p>
             <p className="total">{calculateTotal()}</p>
-            <button className="buttonMenu" id="send-to-cook">Enviar pedido</button>
+            <button className="buttonMenu" id="send-to-cook" onClick={handleSendToCook} >Enviar pedido</button>
           </div>
           
         </div>
