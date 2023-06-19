@@ -3,6 +3,7 @@ import "../kitchen/kitchen.css"
 import { Navigate, Link } from "react-router-dom";
 import {  useContext,useEffect, useState } from "react";
 import { dataContex } from "../contex/eso";
+
 export const Kitchen = () => {
   const [orders, setOrders] = useState([]);
   const [orderSelected, SetOrderSelected] = useState(null);
@@ -48,6 +49,7 @@ export const Kitchen = () => {
       });
 
   }
+  
   const showOrdersByStatus = (status) => {
     setFilterType(status);
   };
@@ -84,7 +86,7 @@ export const Kitchen = () => {
             onClick={() => changeOrderStatus(order.id)} >
             <p className="item">Cliente: {order.clientName}</p>
             <p className="item">Fecha: {order.date}</p>
-            <p className="item">Hora: {order.time}</p>
+           
             <p className="item"></p>
             <ul>
               {order.products.map((product, index) => (

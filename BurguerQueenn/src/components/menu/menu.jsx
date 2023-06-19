@@ -99,13 +99,14 @@ export const Menu = () => {
     const currentDate = new Date();
     const formattedDate = moment(currentDate).format('YYYY-MM-DD HH:mm:ss');
     const order = {
+      status: 'pending',
       clientName: clientName,
       date: formattedDate,
       products: cart.map((product) => ({
         name: product.name,
         quantity: product.quantity,
         price: product.price,
-        status: 'pending',
+        
       })),
     };
   
