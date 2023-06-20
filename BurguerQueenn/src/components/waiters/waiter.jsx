@@ -9,8 +9,7 @@ import { dataContex } from "../contex/eso";
 export const Waiter = () => {
   const [orders, setOrders] = useState([]);
   const [orderSelected, setOrderSelected] = useState(null);
-  const [filterType, setFilterType] = useState('done');
-  
+    
 
 
   //para ver los pedidos debo hacer una peticiòn get de las ordenes 
@@ -66,21 +65,10 @@ export const Waiter = () => {
       });
   }
 
-  const showOrdersByStatusDelivered = (status) => {
-    setFilterType(status);
 
-  };
   
-  const filteredOrders = orders.filter((order) => {
-    if (filterType === "done") {
-      return order.status === "done";
-    } else if (filterType === "delivered") {
-      return order.status === "delivered";
-    }
-    return true; // Si no hay filtro seleccionado, muestra todas las órdenes
-  });
-    // aqui hago mi funciòn para acceder el tiempo demorado
-  console.log(filteredOrders, 'ordenes filtradas')
+
+  // aqui hago mi funciòn para acceder el tiempo demorado
 
 
 
@@ -95,16 +83,16 @@ export const Waiter = () => {
         </button>
       </div>
       <div className="button-orders"> 
-        <button className="buttonMenu" onClick={() =>showOrdersByStatusDelivered("done")}>
+        <button className="buttonMenu" >
           Pendientes
         </button>      
-        <button className="buttonMenu" onClick={() => showOrdersByStatusDelivered("delivered")}>
+        <button className="buttonMenu" >
           Entregados
         </button>
       </div>
       {orders.map((order) => (
         
-        <div  className={`order-container ${order.status === "done" ? "done" : ""}`}
+        <div  className={`order-container ${order.status === "delivered" ? "delivered" : ""}`}
           key={order.id}
           onClick={() => handlechangeOrderStatus(order.id)} >
           <p className="item">Cliente: {order.clientName}</p>

@@ -29,18 +29,18 @@ p{
     width: 100%;
     height: auto;
 }
-.orderContainer{
+.order-Container{
     display: flex;
     flex-direction: column;
     padding: 0;
     background-color: #F4B183;
     width: 95%;
-    margin: 0%;
+    justify-content: left;
     margin-top: 3%;
     align-items: center;
     border-radius: 20px;
 }
-headers{
+.headers{
     display: flex;
     flex-direction: row;
 }

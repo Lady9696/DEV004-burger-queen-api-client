@@ -95,10 +95,11 @@ export const Kitchen = () => {
     } else if (filterType === "done") {
       return order.status === "done";
     }
-    return true; // Si no hay filtro seleccionado, muestra todas las órdenes
+    return true; 
+    // Si no hay filtro seleccionado, muestra todas las órdenes
   });
   // aqui hago mi funciòn para acceder el tiempo demorado
-  console.log(filteredOrders, 'ordenes filtradas')
+  
   
   
   
