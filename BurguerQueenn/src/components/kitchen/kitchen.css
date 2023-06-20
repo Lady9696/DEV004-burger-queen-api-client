@@ -30,6 +30,14 @@ p{
   height: auto;
  
 }
+.headers{
+    display: flex;
+    flex-direction: row;
+}
+.button-orders{
+    display: flex;
+    flex-direction: row;
+}
 .order-container{
     display: flex;
     flex-direction: column;
@@ -44,4 +52,8 @@ p{
 .done {
     background-color: lightgreen;
     /* Otros estilos para las órdenes entregadas */
+  }
+  .orders{
+    display: flex;
+    flex-direction: column;
   }

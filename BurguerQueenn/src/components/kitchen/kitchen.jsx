@@ -117,17 +117,22 @@ export const Kitchen = () => {
   return (
     <div className="squareKitchen">
       <div className="orders">
-        <p>Pedidos</p>
-        <button className="buttonMenu" onClick={() => showOrdersByStatus("pending")}>
+        <div className="headers">
+          <button className="buttonMenu"  > <Link to="/menu">Menu</Link>
+          </button>
+          <button className="buttonMenu"  > <Link to="/waiter">waiter</Link>
+          </button>
+        </div>
+        
+        <div className="button-orders"> 
+          <button className="buttonMenu" onClick={() => showOrdersByStatus("pending")}>
           Pendientes
-        </button>      
-        <button className="buttonMenu" onClick={() => showOrdersByStatus("done")}>
+          </button>      
+          <button className="buttonMenu" onClick={() => showOrdersByStatus("done")}>
           Entregados
-        </button>
-        <button className="buttonMenu"  > <Link to="/menu">Menu</Link>
-        </button>
-        <button className="buttonMenu"  > <Link to="/waiter">waiter</Link>
-        </button>
+          </button>
+        </div>
+        
       </div>
       <div className="order-show">
         {filteredOrders.map((order) => (
