@@ -19,10 +19,11 @@ export const Kitchen = () => {
   useEffect(() => {
     axios.get("http://localhost:8080/orders")
       .then((response) => {
+        console.log(response.data, 'aquiiiii')
         const sortedOrders = response.data.sort((a, b) => {
           // Ordenar por fecha y hora en orden descendente
-          const dateA = new Date(a.date + ' ' + a.time);
-          const dateB = new Date(b.date + ' ' + b.time);
+          const dateA = new Date(a.dateEntry);
+          const dateB = new Date(b.dateEntry);
           return dateB - dateA;
         });
         setOrders(sortedOrders);
@@ -77,6 +78,7 @@ export const Kitchen = () => {
 
 
   }
+  //para filtrar por estado 
   
   const showOrdersByStatus = (status) => {
     setFilterType(status);
