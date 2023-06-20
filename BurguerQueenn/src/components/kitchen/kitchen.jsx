@@ -2,6 +2,7 @@ import axios from "axios"
 import dayjs from "dayjs";
 import duration from 'dayjs/plugin/duration';
 dayjs.extend(duration);
+import { OrderContainer } from "./orderContainer";
 
 import "../kitchen/kitchen.css"
 import { Navigate, Link } from "react-router-dom";
@@ -12,7 +13,7 @@ export const Kitchen = () => {
   const [orders, setOrders] = useState([]);
   const [orderSelected, setOrderSelected] = useState(null);
   const [filterType, setFilterType] = useState('pending');
-  const [dateProcessed, setdateProcessed] = useState(null);
+ 
   
 
 
@@ -39,8 +40,11 @@ export const Kitchen = () => {
   }
   //este es el el onclick
   const changeOrderStatus = (orderId) => {
+    
     setOrderSelected(orderId)
+    /*
     const updatedOrders = orders.map((order) => {
+
       if (order.id === orderId) {
         
         return { ...order, status: "done"};
@@ -48,7 +52,7 @@ export const Kitchen = () => {
       }
       return order;
     });
-
+    */
     const currentDate = dayjs();
     const formattedDate =currentDate.format('YYYY-MM-DD HH:mm:ss');
     //peticion para cambiar el estado y para introducir el dateProcessed en el servidor
@@ -68,8 +72,9 @@ export const Kitchen = () => {
         });
 
         // Actualiza el estado con los pedidos actualizados
+        
         setOrders(updatedOrders);
-        setdateProcessed(formattedDate);
+        
       })
       .catch((error) => {
         console.log(error);
@@ -95,16 +100,7 @@ export const Kitchen = () => {
   // aqui hago mi funciòn para acceder el tiempo demorado
   console.log(filteredOrders, 'ordenes filtradas')
   
-  const calculateDuration = (dateEntry, dateProcessed) => {
-    const start = dayjs(dateEntry);
-    const end = dayjs(dateProcessed);
-    const duration = dayjs.duration(end.diff(start));
-    const hours = duration.hours();
-    const minutes = duration.minutes();
-    const seconds = duration.seconds();
   
-    return `${hours} hours, ${minutes} minutes, ${seconds} seconds`;
-  };
   
 
 
@@ -133,7 +129,9 @@ export const Kitchen = () => {
       </div>
       <div className="order-show">
         {filteredOrders.map((order) => (
-            
+          
+          < OrderContainer key={order.id} changeStatus={changeOrderStatus} order={order} />
+          /*
           <div  className={`order-container ${order.status === "done" ? "done" : ""}`}
             key={order.id}
             onClick={() => changeOrderStatus(order.id)} >
@@ -151,6 +149,7 @@ export const Kitchen = () => {
             </ul>
             
           </div>
+          */
         ))}
       </div>
     </div>
