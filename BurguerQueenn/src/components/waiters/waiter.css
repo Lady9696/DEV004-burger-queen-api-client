@@ -44,3 +44,7 @@ headers{
     display: flex;
     flex-direction: row;
 }
+.delivered {
+    background-color: purple;
+  
+  }

@@ -40,6 +40,7 @@ export const Waiter = () => {
   }
   // aqui hago el manejador para cambiar el estado
   const handlechangeOrderStatus = (orderId) =>{
+
     setOrderSelected(orderId)
     // aqui debo hacer la peticiòn para cambiar el estado de
     //status:"done", a status: delivered en el servidor
@@ -53,7 +54,7 @@ export const Waiter = () => {
         const updatedOrders = orders.map((order) => {
           if (order.id === orderId) {
             // Actualiza la propiedad `status` 
-            return { ...order, status: "done" };
+            return { ...order, status: "delivered" };
           }
           return order;
         });
@@ -103,10 +104,17 @@ export const Waiter = () => {
       </div>
       {orders.map((order) => (
         
-        <div className="orderContainer" key= {order.id}>
+        <div  className={`order-container ${order.status === "done" ? "done" : ""}`}
+          key={order.id}
+          onClick={() => handlechangeOrderStatus(order.id)} >
           <p className="item">Cliente: {order.clientName}</p>
           <p className="item">estado: {order.status}</p>
-          
+          <ul>
+            {order.products.map((product, index) => (
+              <li key={index}>{product.name}</li>
+                
+            ))}
+          </ul>
         </div>
     
       ))}
