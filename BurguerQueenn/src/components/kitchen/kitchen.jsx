@@ -1,5 +1,8 @@
 import axios from "axios"
-import moment from "moment";
+import dayjs from "dayjs";
+import duration from 'dayjs/plugin/duration';
+dayjs.extend(duration);
+
 import "../kitchen/kitchen.css"
 import { Navigate, Link } from "react-router-dom";
 import {  useContext,useEffect, useState } from "react";
@@ -7,8 +10,10 @@ import { dataContex } from "../contex/eso";
 
 export const Kitchen = () => {
   const [orders, setOrders] = useState([]);
-  const [orderSelected, SetOrderSelected] = useState(null);
+  const [orderSelected, setOrderSelected] = useState(null);
   const [filterType, setFilterType] = useState('pending');
+  const [dateProcessed, setdateProcessed] = useState(null);
+  
 
 
   useEffect(() => {
@@ -31,8 +36,9 @@ export const Kitchen = () => {
   if (access === null && user === null) {
     return <Navigate to="/" replace={true} />
   }
-  const changeOrderStatus = (orderId) =>{
-    SetOrderSelected(orderId)
+  //este es el el onclick
+  const changeOrderStatus = (orderId) => {
+    setOrderSelected(orderId)
     const updatedOrders = orders.map((order) => {
       if (order.id === orderId) {
         
@@ -41,18 +47,34 @@ export const Kitchen = () => {
       }
       return order;
     });
-    const currentDate = new Date();
-    const formattedDate = moment(currentDate).format('YYYY-MM-DD HH:mm:ss');
+
+    const currentDate = dayjs();
+    const formattedDate =currentDate.format('YYYY-MM-DD HH:mm:ss');
+    //peticion para cambiar el estado y para introducir el dateProcessed en el servidor
+    // ...
     axios
       .patch(`http://localhost:8080/orders/${orderId}`, {
-        status: "done", dateProcessed:formattedDate,
+        status: "done",
+        dateProcessed: formattedDate,
       })
       .then(() => {
+        const updatedOrders = orders.map((order) => {
+          if (order.id === orderId) {
+            // Actualiza la propiedad `status` y `dateProcessed` del pedido correspondiente
+            return { ...order, status: "done", dateProcessed: formattedDate };
+          }
+          return order;
+        });
+
+        // Actualiza el estado con los pedidos actualizados
         setOrders(updatedOrders);
+        setdateProcessed(formattedDate);
       })
       .catch((error) => {
         console.log(error);
       });
+    // ...
+
 
   }
   
@@ -68,29 +90,29 @@ export const Kitchen = () => {
     }
     return true; // Si no hay filtro seleccionado, muestra todas las órdenes
   });
-  const calculateElapsedTime = (dataEntry, dateProcessed) => {
-    const start = moment(dataEntry, "HH:mm");
-    const end = moment(dateProcessed, "HH:mm");
-    const duration = moment.duration(end.diff(start));
-    const hours = Math.floor(duration.asHours());
-
-    const minutes = duration.asMinutes();
-    let elapsedTime = "";
-    if (hours > 0) {
-      elapsedTime += hours === 1 ? `${hours} hora ` : `${hours} horas `;
-    }
-    if (minutes > 0) {
-      elapsedTime += minutes === 1 ? `${minutes} minuto` : `${minutes} minutos`;
-    }
+  // aqui hago mi funciòn para acceder el tiempo demorado
+  console.log(filteredOrders, 'ordenes filtradas')
   
-    return elapsedTime;
-
-    
+  const calculateDuration = (dateEntry, dateProcessed) => {
+    const start = dayjs(dateEntry);
+    const end = dayjs(dateProcessed);
+    const duration = dayjs.duration(end.diff(start));
+    const hours = duration.hours();
+    const minutes = duration.minutes();
+    const seconds = duration.seconds();
+  
+    return `${hours} hours, ${minutes} minutes, ${seconds} seconds`;
   };
-  console.log('*****', orders)
-/*<p className="item">Fecha: {order.dataEntry}</p>
+  
+
+
+  
+  
+  /*<p className="item">Fecha: {order.dataEntry}</p>
             <p className="item">tiempo: {order.dateProcessed}</p>
-            con sto hice el calculo*/
+            con sto hice el calculo
+                        <p className="item">Demorado: {order.dataEntry ? calculateElapsedTime(order.dataEntry, order.dateProcessed) : ""} <p>Duración: {calculateDuration(order.dateEntry, order.dateProcessed)}</p></p>
+*/
   
 
 
@@ -115,10 +137,10 @@ export const Kitchen = () => {
             onClick={() => changeOrderStatus(order.id)} >
             <p className="item">Cliente: {order.clientName}</p>
             
-            <p className="item">Demorado: {order.dataEntry ? calculateElapsedTime(order.dataEntry, order.dateProcessed) : ""}</p>
-
-           
-            <p className="item"></p>
+            <p  className="item">tiempo incial {order.dateEntry}</p>
+            <p className="item">tiempo final {order.dateProcessed}</p>
+            <p className="item">tiempo demorado {calculateDuration(order.dateEntry, order.dateProcessed)}</p>
+            
             <ul>
               {order.products.map((product, index) => (
                 <li key={index}>{product.name}</li>

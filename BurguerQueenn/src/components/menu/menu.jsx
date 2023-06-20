@@ -1,4 +1,5 @@
-import moment from 'moment';
+
+import dayjs from "dayjs";
 import { Navigate, Link} from "react-router-dom";
 import "../menu/menu.css"
 import {  useContext, useState } from "react";
@@ -96,11 +97,11 @@ export const Menu = () => {
  
   const handleSendToCook = () => {
     //console.log(cart, 'este es mi carrito con productos elegidos');
-    const currentDate = new Date();
-    const formattedDate = moment(currentDate).format('YYYY-MM-DD HH:mm:ss');
+    const currentDate = dayjs();
+    const formattedDate = currentDate.format('YYYY-MM-DD HH:mm:ss');
     const order = {
       status: 'pending',
-      dataEntry: formattedDate,
+      dateEntry: formattedDate,
       clientName: clientName,
       products: cart.map((product) => ({
         name: product.name,
