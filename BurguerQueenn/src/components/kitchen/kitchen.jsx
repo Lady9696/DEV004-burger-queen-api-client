@@ -87,7 +87,10 @@ export const Kitchen = () => {
 
     
   };
-
+  console.log('*****', orders)
+/*<p className="item">Fecha: {order.dataEntry}</p>
+            <p className="item">tiempo: {order.dateProcessed}</p>
+            con sto hice el calculo*/
   
 
 
@@ -111,8 +114,7 @@ export const Kitchen = () => {
             key={order.id}
             onClick={() => changeOrderStatus(order.id)} >
             <p className="item">Cliente: {order.clientName}</p>
-            <p className="item">Fecha: {order.dataEntry}</p>
-            <p className="item">tiempo: {order.dateProcessed}</p>
+            
             <p className="item">Demorado: {order.dataEntry ? calculateElapsedTime(order.dataEntry, order.dateProcessed) : ""}</p>
 
            

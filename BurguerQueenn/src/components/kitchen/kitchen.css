@@ -32,11 +32,11 @@ p{
 }
 .order-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 0;
     background-color: #F4B183;
     width: 95%;
-    
+    justify-content: left;
     margin-top: 3%;
     align-items: center;
     border-radius: 20px;
