@@ -125,11 +125,15 @@ export const Menu = () => {
   
   return (
     <div className="squareMenu">
-      <button className="buttonMenu" id="buttonBreakfast" onClick={() => handleFiltro("Desayuno")}>Desayuno</button>
-      
-      <button className="buttonMenu" id="buttonLunch" onClick={() => handleFiltro("Almuerzo")}>Almuerzo</button>
-      <button className="buttonMenu" id="buttonBreakfast" > <Link to="/kitchen">Kitchen</Link>
-      </button>
+      <div className="headers">
+        <button className="buttonMenu" id="buttonBreakfast" > <Link to="/kitchen">Kitchen</Link></button>
+        <button className="buttonMenu"  > <Link to="/waiter">Waiter</Link>
+        </button>
+      </div>
+      <div className="containerOptions">
+        <button className="buttonMenu" id="buttonBreakfast" onClick={() => handleFiltro("Desayuno")}>Desayuno</button>
+        <button className="buttonMenu" id="buttonLunch" onClick={() => handleFiltro("Almuerzo")}>Almuerzo</button>
+      </div> 
       <div className="ContainerOrderCliente">
         <div className="containerProducts">
         

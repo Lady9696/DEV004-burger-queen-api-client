@@ -124,7 +124,9 @@ export const Kitchen = () => {
         <button className="buttonMenu" onClick={() => showOrdersByStatus("done")}>
           Entregados
         </button>
-        <button className="buttonMenu" id="buttonBreakfast" > <Link to="/menu">Menu</Link>
+        <button className="buttonMenu"  > <Link to="/menu">Menu</Link>
+        </button>
+        <button className="buttonMenu"  > <Link to="/waiter">waiter</Link>
         </button>
       </div>
       <div className="order-show">
