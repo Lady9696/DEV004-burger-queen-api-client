@@ -21,7 +21,7 @@ p{
     
 }
 table{
-    background-color:#F4B183;
+    background-color:#FFB4B4;
     margin-top: 10%;
 }
 .headerCell {
@@ -60,7 +60,7 @@ ion-icon[name="add-outline"] {
   .Container-decrease{
     width: 90px;
     height: 55px;
-    background-color: #FFD966;
+    background-color: #FFB4B4;
     border: 1px solid black;
     justify-content: center;
     display: flex;
@@ -71,7 +71,7 @@ ion-icon[name="add-outline"] {
     
   }
   .Container-increase{
-    background-color: #FFD966;
+    background-color: #FFB4B4;
     width: 90px;
     height: 55px;
     display: flex;
@@ -107,6 +107,7 @@ ion-icon[name="add-outline"] {
 .containerOptions{
     display: flex;
     flex-direction: row;
+    margin-top: -10%;
 }
 .ContainerOrderCliente{
     display: flex;
@@ -149,7 +150,7 @@ ion-icon[name="add-outline"] {
     display: flex;
     flex-direction: column;
     padding: 0;
-    background-color: #F4B183;
+    background-color: #FFDEB4;
     width: 95%;
     
     margin-top: 3%;
@@ -176,10 +177,11 @@ h2{
     width: 220px;
     height: 62px;
     border-radius:20px;
-    background-color: #F4B183;
+    background-color: #B2A4FF;
     font-weight: bold;
     font-size: 30px;
     margin: 5%;
+    margin-top: 50%;
 }
 /*
 .order{
@@ -275,7 +277,7 @@ border-radius: 10px;
    margin: 30%;
     margin-left: 0%;
     margin-bottom: 15%;
-    background-color: #FFD966;
+    background-color: #B2A4FF;
     width: 100%;
     height: 40%;
 

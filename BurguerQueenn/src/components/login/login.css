@@ -1,5 +1,3 @@
-
-
 * {
     margin: 0;
     padding: 0;
@@ -8,19 +6,18 @@
 }
 
 body {
-    background-image: url(https://i.ibb.co/qRwgKDB/border.jpg);
-    display: flex;
+    background-color: bisque;
 }
 
-/*width: 820px;
-    height: 1180px;*/
+
 
 #root {
     display: flex;
-     margin-top: 15%;
-    
+    width: 820px;
+    height: 1180px;
+    margin-top: 0;
+    margin-bottom: 0;
     background-image: url(https://i.ibb.co/qRwgKDB/border.jpg);
-   
 }
 
 .squarecontainer {
@@ -28,11 +25,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90%;
-    height: 100%;
-    margin-left: 4%;
+    width: 94%;
+    height: 70%;
+    margin-left: 0%;
     margin-top: 15%;
-    margin-bottom: 20%;
+    margin-bottom: 15%;
     background-color: white;
     flex-wrap: nowrap;
     border-radius: 62px;
@@ -85,8 +82,8 @@ h1 {
     width: 80%;
     height: 60%;
     margin-top: -14%;
-    margin-bottom: 35%;
-    background: #F4B183;
+    margin-bottom: 8%;
+    background: #FFDEB4;
     flex-wrap: nowrap;
 }
 
@@ -114,7 +111,7 @@ h1 {
     left: 246px;
     top: 775px;
     border-radius: 20px;
-    background-color: #FFD966;
+    background-color: #B2A4FF;
     font-size: 32px;
     font-weight: 700;
     font-size: 32px;
@@ -130,17 +127,29 @@ h1 {
 
 }
 ::placeholder {
-    
+    Weight:400px;
     font-size:28px;
 line-height:33.89px;
 text-align: center;
 }
 
-ion-icon {
-    font-size: 34px;
-    position: absolute;
-    margin-top: -12%;
-    margin-left: 40%;
-  }
+
 /* vista menu-----------------------------------------------*/
 
+#sendOrder{
+    width: 253px;
+    height: 78px;
+    left: 246px;
+    top: 775px;
+    border-radius: 20px;
+    background-color: #FFD966;
+    font-size: 32px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+
+    color: #000000;
+
+    opacity: 0.8;
+}

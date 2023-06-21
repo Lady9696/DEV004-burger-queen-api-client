@@ -126,9 +126,10 @@ export const Menu = () => {
   return (
     <div className="squareMenu">
       <div className="headers">
-        <button className="buttonMenu" id="buttonBreakfast" > <Link to="/kitchen">Kitchen</Link></button>
-        <button className="buttonMenu"  > <Link to="/waiter">Waiter</Link>
-        </button>
+      <button className="buttonMenu" id="buttonBreakfast" > <Link to="/kitchen">Kitchen</Link></button>
+      
+      
+      
       </div>
       <div className="containerOptions">
         <button className="buttonMenu" id="buttonBreakfast" onClick={() => handleFiltro("Desayuno")}>Desayuno</button>
