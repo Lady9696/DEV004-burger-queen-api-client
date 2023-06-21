@@ -33,7 +33,7 @@ p{
     display: flex;
     flex-direction: column;
     padding: 0;
-    background-color: #F4B183;
+    background-color: lightgreen;
     width: 95%;
     justify-content: left;
     margin-top: 3%;
@@ -43,6 +43,9 @@ p{
 .headers{
     display: flex;
     flex-direction: row;
+}
+.done{
+    background-color: lightgreen;
 }
 .delivered {
     background-color: purple;
