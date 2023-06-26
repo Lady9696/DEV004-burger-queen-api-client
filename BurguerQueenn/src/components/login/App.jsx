@@ -20,11 +20,12 @@ function Login() {
     const values = {
       email: emailValue,
       password: passwordValue,
+      rol:'waiter'
     };
 
     /*se realiza la peticion con post y se le pasa el objeto con los values de los inputs*/
       
-    axios.post("http://localhost:8080/login", values)
+    axios.post("http://localhost:8080/users", values)
     /*si el usuario ingresa el correo y contraseña correctos, se va dirigir al menu*/
       .then((response) => {
         //console.log('hola', response );
