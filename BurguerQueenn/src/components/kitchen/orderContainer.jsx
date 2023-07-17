@@ -21,18 +21,20 @@ export const OrderContainer = ({order,changeStatus}) =>{
     onClick={() => changeStatus(order.id)} >
     <p className="item">Cliente: {order.clientName}</p>
   
-    <p  className="item">tiempo incial {order.dateEntry}</p>
-    <p className="item">tiempo final {order.dateProcessed}</p>
-    {order.status === "done" && <p className="item">tiempo demorado {calculateDuration(order.dateEntry, order.dateProcessed)}</p>}
+    
   
-    <ul>
+    <ul className="products">
       {order.products.map((product, index) => (
-        <li key={index}>{product.name}</li>
+        <li className="product" key={index}>{product.name}</li>
       
       ))}
     </ul>
+    <p className="item">tiempo final {order.dateProcessed}</p>
+    {order.status === "done" && <p className="item">tiempo demorado {calculateDuration(order.dateEntry, order.dateProcessed)}</p>}
   
   </div>
   </>
   )
 }
+/*     <p  className="item">tiempo incial {order.dateEntry}</p>
+*/

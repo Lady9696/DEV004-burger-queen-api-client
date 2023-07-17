@@ -119,10 +119,17 @@ export const Kitchen = () => {
     <div className="squareKitchen">
       <div className="orders">
         <div className="headers">
-          <button className="buttonMenu"  > <Link to="/menu">Menu</Link>
-          </button>
-          <button className="buttonMenu"  > <Link to="/waiter">waiter</Link>
-          </button>
+          <nav className="nav">
+            <ul className = "list">
+              <li className="list-page">
+                <button className="buttonm" id="buttonBreakfast" > <Link to="/menu" className="linkButton">Menu</Link></button>
+              </li>
+              <li className="list-page">
+                <button className="buttonm" id="buttonBreakfast" > <Link to="/waiter" className="linkButton"> Mesero</Link></button>
+              </li>
+            </ul>
+
+          </nav>
         </div>
         
         <div className="button-orders"> 

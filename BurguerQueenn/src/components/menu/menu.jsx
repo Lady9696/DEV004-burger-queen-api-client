@@ -131,7 +131,7 @@ export const Menu = () => {
       .catch((error) => {
         console.log(error);
       });
-       // Restablece los campos después de enviar el pedido
+    // Restablece los campos después de enviar el pedido
     clearCart();
     resetFields();
     
@@ -146,7 +146,7 @@ export const Menu = () => {
         <nav className="nav">
           <ul className = "list">
             <li className="list-page">
-              <button className="buttonm" id="buttonBreakfast" > <Link to="/kitchen" className="linkButton">Kitchen</Link></button>
+              <button className="buttonm" id="buttonBreakfast" > <Link to="/kitchen" className="linkButton">Cocina</Link></button>
             </li>
             <li className="list-page">
               <button className="buttonm" id="buttonBreakfast" > <Link to="/waiter" className="linkButton"> Mesero</Link></button>
