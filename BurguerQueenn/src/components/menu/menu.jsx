@@ -143,7 +143,6 @@ export const Menu = () => {
   return (
     <div className="squareMenu">
       <div className="headers">
-        <button className="buttonMenu" id="buttonBreakfast" > <Link to="/kitchen">Kitchen</Link></button>
         <nav className="nav">
           <ul className = "list">
             <li className="list-page">
