@@ -131,7 +131,7 @@ export const Menu = () => {
       .catch((error) => {
         console.log(error);
       });
-       // Restablece los campos después de enviar el pedido
+    // Restablece los campos después de enviar el pedido
     clearCart();
     resetFields();
     
@@ -143,14 +143,25 @@ export const Menu = () => {
   return (
     <div className="squareMenu">
       <div className="headers">
-        <button className="buttonMenu" id="buttonBreakfast" > <Link to="/kitchen">Kitchen</Link></button>
+        <nav className="nav">
+          <ul className = "list">
+            <li className="list-page">
+              <button className="buttonMenu" id="buttonBreakfast" > <Link to="/kitchen">Kitchen</Link></button>
+            </li>
+            <li className="list-page">
+              <button className="buttonMenu" id="buttonBreakfast" > <Link to="/waiter">Mesero</Link></button>
+            </li>
+          </ul>
+
+        </nav>
       
       
       
       </div>
       <div className="containerOptions">
-        <button className="buttonMenu" id="buttonBreakfast" onClick={() => handleFiltro("Desayuno")}>Desayuno</button>
+      <button className="buttonMenu" id="buttonBreakfast" onClick={() => handleFiltro("Desayuno")}>Desayuno</button>
         <button className="buttonMenu" id="buttonLunch" onClick={() => handleFiltro("Almuerzo")}>Almuerzo</button>
+        
       </div> 
       <div className="ContainerOrderCliente">
         <div className="containerProducts">

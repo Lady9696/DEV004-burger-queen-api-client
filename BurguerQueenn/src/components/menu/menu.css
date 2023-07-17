@@ -20,6 +20,32 @@ p{
     font-weight: bold;
     
 }
+.nav{
+    width: 909px;
+    height: 250px;
+    background-color: #FFB4B4;
+    display: flex;
+    flex-direction: row;
+    border-radius:15px;
+    position: fixed;
+    padding-top: 0%;
+    margin-left: -22%;
+    
+
+}
+.list{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 15%;
+    margin-top: 2%;
+   
+}
+.list-page{
+    list-style: none;
+}
 table{
     background-color:#FFB4B4;
     margin-top: 10%;
@@ -107,7 +133,8 @@ ion-icon[name="add-outline"] {
 .containerOptions{
     display: flex;
     flex-direction: row;
-    margin-top: -10%;
+    margin-top: 10%;
+    background-color:#FFDEB4 ;
 }
 .ContainerOrderCliente{
     display: flex;
