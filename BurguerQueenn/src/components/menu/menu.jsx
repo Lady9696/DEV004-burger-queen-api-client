@@ -7,21 +7,25 @@ import { dataContex } from "../contex/eso";
 import { useProducts } from "../services/useProducts";
 import axios from "axios";
 
+//componente
 export const Menu = () => {
   const { access, user,cart, setCart} = useContext(dataContex);
   const [count, setCount] = useState(0);
   
+  
   const {productsPromiseStatus, products} = useProducts()
   /*inicializo la constante como null*/
+  //incializo el filtro con el tipo desayuno
   const [filterType, setFilterType] = useState("Desayuno");
   const [clientName, setClientName] = useState('');
+  
   
   
   if (access === null && user === null) {
     return <Navigate to="/" replace={true} />
   }
   /*creo una funciòn que recibe un paràmetro que permite cambiar el valor a desayuno o almuerzo, esta funciòn
-  se encuentra dentro delos botones, y el cambio se produce al darle click*/
+  se encuentra dentro de los botones, y el cambio se produce al darle click*/
   const handleFiltro = (type) => {
     
     setFilterType(type);
@@ -29,13 +33,17 @@ export const Menu = () => {
   /*si el filtro es truthy, entonces se ejecutarà el filtrado el cual serà desayuno o almuerzo segùn el estado
   de lo contario, es decir si es null, entonces se mostraran todos los productos*/
   const filteredProducts = filterType ? products.filter((product) => product.type === filterType): products;
-  //Aqui voy a agregarle el onclick a las imagenes
+  //Aqui voy a agregarle el onclick a los productoe
 
+  const resetFields = () => {
+    setClientName('');
+  //realizo el carrito
+  }
   const AddToCart = (product, count) => {
     
     setCart((prevCart) => {
       const existingProduct = prevCart.find((item) => item.id === product.id);
-  
+      
       if (existingProduct) {
         return prevCart.map((item) => {
           if (item.id === product.id) {
@@ -86,6 +94,10 @@ export const Menu = () => {
   const handleInputChange = (event) => {
     setClientName(event.target.value);
   };
+  const clearCart = () => {
+    setCart([]);
+    setCount({});
+  };
   
   /*
   if (count > 0) {
@@ -110,6 +122,7 @@ export const Menu = () => {
         
       })),
     };
+     
   
     axios.post("http://localhost:8080/orders", order)
       .then((response) => {
@@ -118,6 +131,10 @@ export const Menu = () => {
       .catch((error) => {
         console.log(error);
       });
+       // Restablece los campos después de enviar el pedido
+    clearCart();
+    resetFields();
+    
   };
   
   
@@ -126,7 +143,7 @@ export const Menu = () => {
   return (
     <div className="squareMenu">
       <div className="headers">
-      <button className="buttonMenu" id="buttonBreakfast" > <Link to="/kitchen">Kitchen</Link></button>
+        <button className="buttonMenu" id="buttonBreakfast" > <Link to="/kitchen">Kitchen</Link></button>
       
       
       
