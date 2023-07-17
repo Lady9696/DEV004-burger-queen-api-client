@@ -144,7 +144,19 @@ export const Menu = () => {
     <div className="squareMenu">
       <div className="headers">
         <button className="buttonMenu" id="buttonBreakfast" > <Link to="/kitchen">Kitchen</Link></button>
-      
+        <nav className="nav">
+          <ul className = "list">
+            <li className="list-page">
+              <button className="buttonMenu" id="buttonBreakfast" > <Link to="/kitchen" className="linkButton">Kitchen</Link></button>
+            </li>
+            <li className="list-page">
+              <button className="buttonMenu" id="buttonBreakfast" > <Link to="/waiter" className="linkButton"> Mesero</Link></button>
+            </li>
+          </ul>
+
+        </nav>
+
+
       
       
       </div>
