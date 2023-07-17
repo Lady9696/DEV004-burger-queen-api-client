@@ -49,6 +49,21 @@ p{
     text-decoration: none;
     color: black;
 }
+.buttonm{
+    width: 220px;
+    height: 62px;
+    border-radius:20px;
+    background-color: #B2A4FF;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 5%;
+    margin-top: 50%;
+    
+}
+.buttonm:hover{
+    background-color: gold;
+
+}
 table{
     background-color:#FFB4B4;
     margin-top: 10%;
@@ -211,6 +226,9 @@ h2{
     font-size: 30px;
     margin: 5%;
     margin-top: 50%;
+}
+.buttonMenu:hover{
+    background-color: #F4B183;
 }
 /*
 .order{

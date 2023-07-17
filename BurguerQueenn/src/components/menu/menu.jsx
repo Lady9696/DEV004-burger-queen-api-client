@@ -146,10 +146,10 @@ export const Menu = () => {
         <nav className="nav">
           <ul className = "list">
             <li className="list-page">
-              <button className="buttonMenu" id="buttonBreakfast" > <Link to="/kitchen" className="linkButton">Kitchen</Link></button>
+              <button className="buttonm" id="buttonBreakfast" > <Link to="/kitchen" className="linkButton">Kitchen</Link></button>
             </li>
             <li className="list-page">
-              <button className="buttonMenu" id="buttonBreakfast" > <Link to="/waiter" className="linkButton"> Mesero</Link></button>
+              <button className="buttonm" id="buttonBreakfast" > <Link to="/waiter" className="linkButton"> Mesero</Link></button>
             </li>
           </ul>
 
