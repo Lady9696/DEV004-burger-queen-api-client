@@ -122,10 +122,10 @@ export const Kitchen = () => {
           <nav className="nav">
             <ul className = "list">
               <li className="list-page">
-                <button className="buttonm" id="buttonBreakfast" > <Link to="/menu" className="linkButton">Menu</Link></button>
+                <a className="buttonm" id="buttonBreakfast" > <Link to="/menu" className="linkButton">Menu</Link></a>
               </li>
               <li className="list-page">
-                <button className="buttonm" id="buttonBreakfast" > <Link to="/waiter" className="linkButton"> Mesero</Link></button>
+                <a className="buttonm" id="buttonBreakfast" > <Link to="/waiter" className="linkButton"> Mesero</Link></a>
               </li>
             </ul>
 

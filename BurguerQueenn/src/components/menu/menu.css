@@ -22,6 +22,7 @@ p{
 }
 
 .nav{
+    padding-top: 20px;
     width: 860px;
     height: 250px;
     background-color: #FFB4B4;
@@ -30,40 +31,44 @@ p{
     border-radius:15px;
     position: fixed;
     padding-top: 0%;
-    justify-content: center;
+    justify-content: left;
     margin-left: -25%;
 
 }
 .list{
     display: flex;
-    justify-content: center;
+    
     flex-direction: row;
-    gap: 15%;
-    margin-top: 2%;
+    gap: 0%;
+    
+   
     
 }
 .list-page{
     list-style: none;
+    margin-top: 60%;
+    background-color: #B2A4FF;
+    margin-left: 30%;
+    border-radius: 15px;
+    height: 30%;
+    width: 60%;
+    align-items: center;
+    padding: 5%;
 }
 .linkButton{
     text-decoration: none;
-    color: black;
+  color: black;
+  font-weight: bold;
+  font-size: 35px; /* Ajusta el tamaño de fuente */
+  margin: 0%;
+  
 }
-.buttonm{
-    width: 220px;
-    height: 62px;
-    border-radius:20px;
-    background-color: #B2A4FF;
-    font-weight: bold;
-    font-size: 30px;
-    margin: 5%;
-    margin-top: 50%;
-    
-}
-.buttonm:hover{
-    background-color: gold;
 
-}
+.linkButton:hover {
+    /* Estilos para el efecto hover */
+    background-color: #FFD700; /* Cambia el color de fondo al pasar el cursor sobre el enlace */
+    color: white; /* Cambia el color del texto al pasar el cursor sobre el enlace */
+  }
 table{
     background-color:#FFB4B4;
     margin-top: 10%;

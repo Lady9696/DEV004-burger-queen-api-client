@@ -24,12 +24,14 @@ export const OrderContainer = ({order,changeStatus}) =>{
     
   
     <ul className="products">
+      <p className="name-products">Productos</p>
       {order.products.map((product, index) => (
+        
         <li className="product" key={index}>{product.name}</li>
       
       ))}
     </ul>
-    <p className="item">tiempo final {order.dateProcessed}</p>
+   
     {order.status === "done" && <p className="item">tiempo demorado {calculateDuration(order.dateEntry, order.dateProcessed)}</p>}
   
   </div>
@@ -37,4 +39,5 @@ export const OrderContainer = ({order,changeStatus}) =>{
   )
 }
 /*     <p  className="item">tiempo incial {order.dateEntry}</p>
+ <p className="item">tiempo final {order.dateProcessed}</p>
 */
