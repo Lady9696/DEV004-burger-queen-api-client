@@ -145,7 +145,7 @@ ion-icon[name="add-outline"] {
   flex-wrap: wrap;
   justify-content: center;
   margin-top: -10%;
-  width: 100%;
+  width: auto;
   height: auto;
  
 }
@@ -233,7 +233,7 @@ h2{
     margin-top: 50%;
 }
 .buttonMenu:hover{
-    background-color: #F4B183;
+    background-color: #DFA67B;
 }
 /*
 .order{

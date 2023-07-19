@@ -32,7 +32,7 @@ export const OrderContainer = ({order,changeStatus}) =>{
       ))}
     </ul>
    
-    {order.status === "done" && <p className="item">tiempo demorado {calculateDuration(order.dateEntry, order.dateProcessed)}</p>}
+    {order.status === "done" && <><p className="item">Tiempo demorado</p><p className="time">{calculateDuration(order.dateEntry, order.dateProcessed)}</p></>}
   
   </div>
   </>

@@ -33,7 +33,7 @@ p{
   flex-wrap: wrap;
   justify-content: center;
   margin-top: -10%;
-  width: 100%;
+  width: auto;
   height: auto;
   flex-direction: row;
  
@@ -65,7 +65,7 @@ p{
     padding: 3%;
     background-color: #F4B183;
     flex-wrap: wrap;
-   height: 30%;
+    height: auto;
     margin-top: 3%;
     align-items: center;
     border-radius: 20px;
@@ -86,14 +86,15 @@ p{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-   height: 30%;
-   width: 30%;
+   height: auto;
+   width: 40%;
+   padding: 3%;
 }
 .product{
     list-style: none;
     
 }
-.order-container done{
-
+.time{
+    font-size: 100%;
+    font-weight: 100;
 }
-  
