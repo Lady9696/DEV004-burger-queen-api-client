@@ -80,13 +80,20 @@ p{
     flex-wrap: wrap;
     justify-content: center;
 }
-.done {
-    background-color: lightgreen;
-    /* Otros estilos para las órdenes entregadas */
-  }
+.order-container.done{
+    background-color: lightgreen; /* Cambia el color de fondo para órdenes completadas */
+  color: black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+   height: 30%;
+   width: 30%;
+}
 .product{
     list-style: none;
     
 }
+.order-container done{
 
+}
   
