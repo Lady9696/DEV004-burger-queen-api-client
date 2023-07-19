@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
+
 button{
     font-weight: bold;
     font-size: 30px;
@@ -11,14 +12,14 @@ button{
 }
 
 .item{
-    display: flex;
-    flex-direction: column;
+    
    font-size: 100%;
-    text-decoration: none;
+    
+    text-align: left;
 }
 p{
     
-    text-align: center;
+    text-align: left;
  
     font-weight: bold;
     
@@ -29,7 +30,7 @@ p{
 }
 .squareKitchen{
     display: flex;
-  background-color: white;
+  background-color:#f9ebf2;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: -10%;
@@ -63,7 +64,7 @@ p{
     display: flex;
     flex-direction: column;
     padding: 3%;
-    background-color: #F4B183;
+    background-color: #FFDEB4;
     flex-wrap: wrap;
     height: auto;
     margin-top: 3%;
@@ -72,7 +73,10 @@ p{
     margin: 2%;
     font-size: 20px;
     padding-bottom: 1%;
-    
+    border-style: outset;
+    border-width: 5px;
+    border-color: #FFB4B4;
+    text-align: left;
 }
 .order-show{
     display: flex;
@@ -81,7 +85,7 @@ p{
     justify-content: center;
 }
 .order-container.done{
-    background-color: lightgreen; /* Cambia el color de fondo para órdenes completadas */
+    background-color: #f3ffeb; /* Cambia el color de fondo para órdenes completadas */
   color: black;
   display: flex;
   flex-direction: column;
@@ -90,6 +94,15 @@ p{
    width: 40%;
    padding: 3%;
 }
+.header-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #FFB4B4;
+    border-radius: 15px;
+    margin-bottom: %;
+    padding: 1%;
+}
 .product{
     list-style: none;
     
@@ -97,4 +110,12 @@ p{
 .time{
     font-size: 100%;
     font-weight: 100;
+}
+.status{
+    font-size: 100%;
+    background-color: #FFB4B4;
+    
+    
+    
+    
 }

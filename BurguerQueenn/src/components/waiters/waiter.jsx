@@ -95,13 +95,20 @@ export const Waiter = () => {
   return (
     <div className="squareWaiter">
       <div className="headers">
-        <button className="buttonMenu"  > <Link to="/menu">Menu</Link>
-        </button>
-        <button className="buttonMenu"  > <Link to="/kitchen">kitchen</Link>
-        </button>
+        <nav className="nav-waiter">
+          <ul className = "list">
+            <li className="list-page">
+              <a className="buttonm" id="buttonBreakfast" > <Link to="/menu" className="linkButton">Menu</Link></a>
+            </li>
+            <li className="list-page">
+              <a className="buttonm" id="buttonBreakfast" > <Link to="/kitchen" className="linkButton"> Cocina</Link></a>
+            </li>
+          </ul>
+
+        </nav>
       </div>
-      <div className="button-orders"> 
-        <h2> vista mesero</h2>
+      <div className="button-orders-waiter"> 
+        
         <button className="buttonMenu"onClick={() => showOrdersByStatus("done")} >
           Pendientes
         </button>      
@@ -110,23 +117,26 @@ export const Waiter = () => {
         </button>
         
       </div>
-      {filtered.map((order) => (
+      <div className="order-waiter">
+        {filtered.map((order) => (
         
-        <div  className={`order-container ${order.status === "delivered" ? "delivered" : ""}`}
-          key={order.id}
-          onClick={() => handlechangeOrderStatus(order.id)} >
+          <div  className={`order-container-waiter ${order.status === "delivered" ? "delivered" : ""}`}
+            key={order.id}
+            onClick={() => handlechangeOrderStatus(order.id)} >
 
-          <p className="item">Cliente: {order.clientName}</p>
-          <p className="item">estado: {order.status}</p>
-          <ul>
-            {order.products.map((product, index) => (
-              <li key={index}>{product.name}</li>
+            <p className="item">Cliente: {order.clientName}</p>
+            <p className="item">estado: {order.status}</p>
+            <ul>
+              {order.products.map((product, index) => (
+                <li className="product" key={index}>{product.name}</li>
                 
-            ))}
-          </ul>
-        </div>
+              ))}
+            </ul>
+          </div>
+       
     
-      ))}
+        ))}
+      </div>
       
     </div>
         

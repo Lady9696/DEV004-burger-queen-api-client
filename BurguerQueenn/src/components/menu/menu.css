@@ -141,7 +141,7 @@ ion-icon[name="add-outline"] {
 
 .squareMenu{
     display: flex;
-  background-color: white;
+  background-color: #fbfee5;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: -10%;
@@ -178,7 +178,7 @@ ion-icon[name="add-outline"] {
     width: 80%;
     margin: 2%;
     gap: 2%;
-    background-color: white;
+    background-color:#fbfee5;
     border-radius: 20px;
 
    }
@@ -201,7 +201,9 @@ ion-icon[name="add-outline"] {
     padding: 0;
     background-color: #FFDEB4;
     width: 95%;
-    
+    border-style: outset;
+    border-width: 5px;
+    border-color: #FFB4B4;
     margin-top: 3%;
     align-items: center;
     border-radius: 20px;

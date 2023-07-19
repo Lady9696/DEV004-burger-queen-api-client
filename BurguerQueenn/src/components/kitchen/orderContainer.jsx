@@ -19,6 +19,9 @@ export const OrderContainer = ({order,changeStatus}) =>{
   return (<><div  className={`order-container ${order.status === "done" ? "done" : ""}`}
     key={order.id}
     onClick={() => changeStatus(order.id)} >
+    <div className="header-container">
+      <p className="status">Estado: {order.status}</p>
+    </div><br/>
     <p className="item">Cliente: {order.clientName}</p>
   
     
