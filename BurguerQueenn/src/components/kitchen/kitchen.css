@@ -21,10 +21,15 @@ p{
     
     text-align: left;
  
-    font-weight: bold;
+    
     
 }
+
 .name-products{
+    font-size: 100%;
+    text-align: left;
+}
+.name-client{
     font-size: 100%;
     text-align: left;
 }
@@ -72,17 +77,19 @@ p{
     border-radius: 20px;
     margin: 2%;
     font-size: 20px;
-    padding-bottom: 1%;
+    padding-bottom: 2%;
     border-style: outset;
     border-width: 5px;
     border-color: #FFB4B4;
-    text-align: left;
+    align-items: flex-start
+    
 }
 .order-show{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    text-align: left;
 }
 .order-container.done{
     background-color: #f3ffeb; /* Cambia el color de fondo para órdenes completadas */
@@ -98,11 +105,32 @@ p{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: #FFB4B4;
+    background-color: #F9EA9A;
     border-radius: 15px;
-    margin-bottom: %;
+    border: 4px solid #FFB4B4;
+    padding: 1%;
+    font-size: 100%;
+    text-align: center;
+    margin-left: 35%;
+}
+.header-container.done{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: red;
+    border-radius: 15px;
+    
     padding: 1%;
 }
+.text-tittle {
+    font-size: 100%;
+    text-align: left;
+}
+.text{
+    text-align: left;
+}
+
+  
 .product{
     list-style: none;
     
@@ -113,7 +141,7 @@ p{
 }
 .status{
     font-size: 100%;
-    background-color: #FFB4B4;
+    
     
     
     

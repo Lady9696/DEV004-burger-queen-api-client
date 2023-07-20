@@ -12,18 +12,11 @@ button{
 h2{
     font-size: 200%;
 }
-p{
-    font-size: 180%;
-    text-align: center;
-    margin-top: 4%;
-    margin: 2%;
-    font-weight: bold;
-    
-}
+
 
 .nav{
     padding-top: 20px;
-    width: 860px;
+    width: 1000px;
     height: 250px;
     background-color: #FFB4B4;
     display: flex;
@@ -145,8 +138,8 @@ ion-icon[name="add-outline"] {
   flex-wrap: wrap;
   justify-content: center;
   margin-top: -10%;
-  width: auto;
-  height: auto;
+  width: 121%;
+  height: 160%;
  
 }
 .headers{

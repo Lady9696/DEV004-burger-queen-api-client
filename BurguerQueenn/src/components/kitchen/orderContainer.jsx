@@ -19,10 +19,11 @@ export const OrderContainer = ({order,changeStatus}) =>{
   return (<><div  className={`order-container ${order.status === "done" ? "done" : ""}`}
     key={order.id}
     onClick={() => changeStatus(order.id)} >
-    <div className="header-container">
-      <p className="status">Estado: {order.status}</p>
+    <div className={`header-container ${order.status === "done" ? "done" : ""}`}>
+      <p className= "text-container">Estado:<p className="status">{order.status}</p></p> 
     </div><br/>
-    <p className="item">Cliente: {order.clientName}</p>
+    
+    <p>Cliente: {order.clientName}</p>
   
     
   
@@ -36,7 +37,7 @@ export const OrderContainer = ({order,changeStatus}) =>{
     </ul>
    
     {order.status === "done" && <><p className="item">Tiempo demorado</p><p className="time">{calculateDuration(order.dateEntry, order.dateProcessed)}</p></>}
-  
+    
   </div>
   </>
   )
