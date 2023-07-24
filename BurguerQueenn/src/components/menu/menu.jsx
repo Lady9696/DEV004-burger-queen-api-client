@@ -143,7 +143,7 @@ export const Menu = () => {
   return (
     <div className="squareMenu">
       <div className="headers">
-        <nav className="nav">
+        <nav className="navMenu">
           <ul className = "list">
             <li className="list-page">
               <a  className="buttonm" id="buttonBreakfast" > <Link to="/kitchen" className="linkButton">Cocina</Link></a>

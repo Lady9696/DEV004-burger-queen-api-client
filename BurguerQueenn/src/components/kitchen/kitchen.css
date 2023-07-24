@@ -24,6 +24,20 @@ p{
     
     
 }
+.nav{
+    padding-top: 20px;
+    width: 1000px;
+    height: 250px;
+    background-color: #FFB4B4;
+    display: flex;
+    flex-direction: row;
+    border-radius:15px;
+    position: fixed;
+    padding-top: 0%;
+    justify-content: left;
+    margin-left: -25%;
+
+}
 
 .name-products{
     font-size: 100%;
@@ -117,7 +131,7 @@ p{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: red;
+    background-color: #d2e1a7;
     border-radius: 15px;
     
     padding: 1%;
