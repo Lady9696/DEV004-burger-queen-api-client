@@ -110,7 +110,7 @@ export const Waiter = () => {
       <div className="button-orders-waiter"> 
         
         <button className="buttonMenu"onClick={() => showOrdersByStatus("done")} >
-          Pendientes
+          Listos
         </button>      
         <button className="buttonMenu"onClick={() => showOrdersByStatus("delivered")} >
           Entregados
@@ -123,9 +123,12 @@ export const Waiter = () => {
           <div  className={`order-container-waiter ${order.status === "delivered" ? "delivered" : ""}`}
             key={order.id}
             onClick={() => handlechangeOrderStatus(order.id)} >
+            <div className={`header-containerWaiter ${order.status === "done" ? "done" : ""}`}>
 
+              <p className="item">Estado: {order.status}</p>
+            </div><br/>
             <p className="item">Cliente: {order.clientName}</p>
-            <p className="item">estado: {order.status}</p>
+            
             <ul>
               {order.products.map((product, index) => (
                 <li className="product" key={index}>{product.name}</li>

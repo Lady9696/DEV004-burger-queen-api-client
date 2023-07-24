@@ -39,20 +39,23 @@ p{
     border-radius:15px;
     position: fixed;
     padding-top: 0%;
-    margin-left: -22%;
+    margin-left: -38%;
 
 
 }
 .button-orders-waiter{
     display: flex;
     margin: 5%;
+    margin-left: -10%;
     
 }
 .order-waiter{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content:left ;
+    background-color:  #f9ebf2;
+    margin-left: 5%;
 }
 
 .order-container-waiter {
@@ -61,22 +64,51 @@ p{
     flex-wrap: wrap;
     background-color: #FFDEB4;
     height: auto;
-    width: 30%;
-    margin: 1%;
+    width: 35%;
+    align-items: flex-start;
     border-radius: 20px;
     border-style: outset;
     border-width: 5px;
     border-color: #FFB4B4;
     font-size: 150%;
-    justify-content: center;
+    justify-content: left;
+    border: 4px solid #FFB4B4;
+
+    margin: 2%;
 }
 .order-container-waiter.delivered{
-    background-color: red;
+    background-color:  #FFDEB4;
     display: flex;
     flex-direction: column;
+    border: 4px solid #FFB4B4;
 
+}
+.header-containerWaiter.done{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #d2e1a7;
+    border-radius: 15px;
+    border: 4px solid #FFB4B4;
+    padding: 1%;
+    margin-left: 20%;
+    margin-bottom: 10%;
+    
+
+}
+.header-containerWaiter{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #B2A4FF;
+    border-radius: 15px;
+    border: 4px solid #FFB4B4;
+    padding: 1%;
+    margin-left: 10%;
 }
 .item{
     list-style: none;
+    text-align: center;
+    
 }
 

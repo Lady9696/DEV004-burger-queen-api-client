@@ -137,7 +137,7 @@ export const Kitchen = () => {
           Pendientes
           </button>      
           <button className="buttonMenu" onClick={() => showOrdersByStatus("done")}>
-          Entregados
+          Hechos
           </button>
         </div>
         
