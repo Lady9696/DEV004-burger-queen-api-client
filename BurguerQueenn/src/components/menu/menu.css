@@ -155,8 +155,8 @@ ion-icon[name="add-outline"] {
     display: flex;
     flex-direction: row;
    border-radius: 20px;
-    margin-left: 0%;
-    width: 95%;
+    margin-left: -17%;
+    width: 80%;
     height: auto;
     margin-top: 0;
     background-color: white;
