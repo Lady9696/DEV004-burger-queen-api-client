@@ -144,6 +144,7 @@ ion-icon[name="add-outline"] {
 }
 .headers{
     display: flex;
+    
     flex-direction: row;
 }
 .containerOptionsMenu{
@@ -152,6 +153,7 @@ ion-icon[name="add-outline"] {
     margin-top: 10%;
     margin-left: -7%;
     gap: 5px;
+
 }
 .ContainerOrderCliente{
     display: flex;
