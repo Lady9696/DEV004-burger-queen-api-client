@@ -159,7 +159,7 @@ export const Menu = () => {
       
       
       </div>
-      <div className="containerOptions">
+      <div className="containerOptionsMenu">
         <button className="buttonMenu" id="buttonBreakfast" onClick={() => handleFiltro("Desayuno")}>Desayuno</button>
         <button className="buttonMenu" id="buttonLunch" onClick={() => handleFiltro("Almuerzo")}>Almuerzo</button>
       </div> 
@@ -187,12 +187,13 @@ export const Menu = () => {
           ))}
         </div>
         <div className="containerTable ">
-          <div className="clientContainer">
+          <form className="clientContainer">
             <p>Información del pedido</p>
             <label htmlFor="client" className="labelClient">Cliente </label>
+            
             <input className="nameClientInput" type="text"value={clientName}
-              onChange={handleInputChange} placeholder="Ingrese el nombre del cliente" ></input> 
-          </div>
+              onChange={handleInputChange} placeholder="Ingrese el nombre del cliente" required></input>  
+          </form>
           <table>
             <thead>
               <tr>

@@ -25,7 +25,7 @@ h2{
     position: fixed;
     padding-top: 0%;
     justify-content: left;
-    margin-left: -26%;
+    margin-left: -40%;
 
 }
 .list{
@@ -146,10 +146,12 @@ ion-icon[name="add-outline"] {
     display: flex;
     flex-direction: row;
 }
-.containerOptions{
+.containerOptionsMenu{
     display: flex;
     flex-direction: row;
     margin-top: 10%;
+    margin-left: -7%;
+    gap: 5px;
 }
 .ContainerOrderCliente{
     display: flex;
