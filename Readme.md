@@ -138,7 +138,7 @@ Yo como jefx de cocina quiero ver los pedidos de lxs clientxs en orden y
 marcar cuáles están listos para saber qué se debe cocinar y avisar a lxs meserxs
 que un pedido está listo para servirlo a un clientx.
 
-![Cocina](/img/cocina.jpg)
+![Cocina](/img/cocina.png)
 
 ##### Criterios de aceptación
 
@@ -153,7 +153,7 @@ que un pedido está listo para servirlo a un clientx.
 Yo como meserx quiero ver los pedidos que están preparados para entregarlos
 rápidamente a lxs clientxs que las hicieron.
 
-![orders](/img/mesero.png)
+![mesero](/img/mesero.png)
 
 ##### Criterios de aceptación
 
