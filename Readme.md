@@ -4,11 +4,9 @@
 
 
 * [1. Resumen del proyecto](#1-resumen-del-proyecto)
-* [2. Criterios de aceptación del proyecto](#3-objetivos-de-aprendizaje)
-* [4. Consideraciones](#4-consideraciones)
-* [5. Criterios de aceptación del proyecto](#5-criterios-de-aceptación-del-proyecto)
-* [6. Despliegue](#6-despliegue)
-* [7. Pistas / tips](#7-pistas--tips)
+* [2. Criterios de aceptación del proyecto](#2-criterios-de-aceptación-del-proyecto)
+* [3. Despliegue](#3-despliegue)
+
 
 ***
 
@@ -112,6 +110,7 @@ Lo que debe ocurrir para que se satisfagan las necesidades del usuario.
 * Acceder a una pantalla de login.
 * Ingresar email y contraseña.
 * Ingresar al sistema de pedidos si las crendenciales son correctas.
+* Se visualiza en tablet
 
 
 #### [Historia de usuario 2] Mesero/a debe poder tomar pedido de cliente/a
@@ -147,6 +146,7 @@ que un pedido está listo para servirlo a un clientx.
 * Marcar los pedidos que se han preparado y están listos para servirse.
 * Ver el tiempo que tomó prepara el pedido desde que llegó hasta que se
   marcó como completado.
+  * Se visualiza en tablet
 
 #### [Historia de usuario 4] Meserx debe ver pedidos listos para servir
 
@@ -159,3 +159,19 @@ rápidamente a lxs clientxs que las hicieron.
 
 * Ver listado de pedido listos para servir.
 * Marcar pedidos que han sido entregados.
+
+## 3. Despliegue
+
+Puedes elegir el proveedor (o proveedores) que prefieras junto
+con el mecanismo de despligue y estrategia de alojamiento.
+Recuerda que si mockeaste la API, también tienes que desplegarla.
+Te recomendamos explorar las siguientes opciones:
+
+* [Vercel](https://vercel.com/) es una plataforma de _despliegue_ que
+nos permite desplegar nuestra aplicación web estática (HTML, CSS y
+JavaScript) y también nos permite desplegar aplicaciones web que se
+ejecutan en el servidor (Node.js).
+* [Netlify](https://www.netlify.com/) al igual que Vercel, es una
+plataforma de _despliegue_ que nos permite desplegar nuestra aplicación
+web estática (HTML, CSS y JavaScript) y también nos permite desplegar
+aplicaciones web que se ejecutan en el servidor (Node.js).
