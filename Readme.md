@@ -97,7 +97,7 @@ hasta hoy.
 ***
 
 #### [Historia de usuario 1] Mesero/a debe poder ingresar al sistema, si el admin ya le ha asignado credenciales
-![login](https://ibb.co/kX4T8kp)
+![login](/img/login.jpg)
 
 
 
@@ -119,7 +119,7 @@ Yo como meserx quiero tomar el pedido de unx clientx para no depender de mi mala
 memoria, para saber cuánto cobrar, y enviarlo a la cocina para evitar errores y
 que se puedan ir preparando en orden.
 
-![menu](https://ibb.co/s20qdg6)
+![menu](/img/menu.png)
 
 ##### Criterios de aceptación
 
@@ -138,7 +138,7 @@ Yo como jefx de cocina quiero ver los pedidos de lxs clientxs en orden y
 marcar cuáles están listos para saber qué se debe cocinar y avisar a lxs meserxs
 que un pedido está listo para servirlo a un clientx.
 
-![Cocina](https://ibb.co/p18SKGL)
+![Cocina](/img/cocina.jpg)
 
 ##### Criterios de aceptación
 
@@ -153,7 +153,7 @@ que un pedido está listo para servirlo a un clientx.
 Yo como meserx quiero ver los pedidos que están preparados para entregarlos
 rápidamente a lxs clientxs que las hicieron.
 
-![orders](https://ibb.co/V30RRxQ)
+![orders](/img/mesero.png)
 
 ##### Criterios de aceptación
 
