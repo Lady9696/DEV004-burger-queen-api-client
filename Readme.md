@@ -97,7 +97,7 @@ hasta hoy.
 ***
 
 #### [Historia de usuario 1] Mesero/a debe poder ingresar al sistema, si el admin ya le ha asignado credenciales
-![login](/img/login.jpg)
+![login](/img/login.png)
 
 
 
