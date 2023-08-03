@@ -4,7 +4,7 @@
 
 
 * [1. Resumen del proyecto](#1-resumen-del-proyecto)
-* [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
+* [2. Criterios de aceptación del proyecto](#3-objetivos-de-aprendizaje)
 * [4. Consideraciones](#4-consideraciones)
 * [5. Criterios de aceptación del proyecto](#5-criterios-de-aceptación-del-proyecto)
 * [6. Despliegue](#6-despliegue)
@@ -88,147 +88,36 @@ el concepto de _estado de pantalla_, y como cada cambio sobre el estado se va
 a ir reflejando en la interfaz (por ejemplo, cada vez que agregamos un _producto_
 a un _pedido_, la interfaz debe actualizar la lista del pedido y el total).
 
-## 3. Objetivos de aprendizaje
+## 2. Criterios de aceptación del proyecto
 
-Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en tu proyecto. Piensa en eso al decidir tu estrategia de trabajo.
+### Definición del producto
 
-### HTML
+El [_Product Owner_](https://www.youtube.com/watch?v=r2hU7MVIzxs&t=202s)
+nos presenta este _backlog_ que es el resultado de su trabajo con el clientx
+hasta hoy.
 
-- [ ] **Uso de HTML semántico**
+***
 
-  <details><summary>Links</summary><p>
+#### [Historia de usuario 1] Mesero/a debe poder ingresar al sistema, si el admin ya le ha asignado credenciales
+![login](https://ibb.co/kX4T8kp)
 
-  * [HTML semántico](https://curriculum.laboratoria.la/es/topics/html/02-html5/02-semantic-html)
-  * [Semantics - MDN Web Docs Glossary](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
-</p></details>
 
-### CSS
 
-- [ ] **Uso de selectores de CSS**
+Yo como meserx quiero poder ingresar al sistema de pedidos.
 
-  <details><summary>Links</summary><p>
+##### Criterios de aceptación
 
-  * [Intro a CSS](https://curriculum.laboratoria.la/es/topics/css/01-css/01-intro-css)
-  * [CSS Selectors - MDN](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Selectors)
-</p></details>
+Lo que debe ocurrir para que se satisfagan las necesidades del usuario.
 
-- [ ] **Modelo de caja (box model): borde, margen, padding**
+* Acceder a una pantalla de login.
+* Ingresar email y contraseña.
+* Ingresar al sistema de pedidos si las crendenciales son correctas.
 
-  <details><summary>Links</summary><p>
 
-  * [Box Model & Display](https://curriculum.laboratoria.la/es/topics/css/01-css/02-boxmodel-and-display)
-  * [The box model - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
-  * [Introduction to the CSS box model - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
-  * [CSS display - MDN](https://developer.mozilla.org/pt-BR/docs/Web/CSS/display)
-  * [display - CSS Tricks](https://css-tricks.com/almanac/properties/d/display/)
-</p></details>
+#### [Historia de usuario 2] Mesero/a debe poder tomar pedido de cliente/a
 
-- [ ] **Uso de flexbox en CSS**
+Yo como meserx quiero tomar el pedido de unx clientx para no depender de mi mala
+memoria, para saber cuánto cobrar, y enviarlo a la cocina para evitar errores y
+que se puedan ir preparando en orden.
 
-  <details><summary>Links</summary><p>
-
-  * [A Complete Guide to Flexbox - CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-  * [Flexbox Froggy](https://flexboxfroggy.com/#es)
-  * [Flexbox - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
-</p></details>
-
-- [ ] **Uso de CSS Grid Layout**
-
-  <details><summary>Links</summary><p>
-
-  * [A Complete Guide to Grid - CSS Tricks](https://css-tricks.com/snippets/css/complete-guide-grid/)
-  * [Grids - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids)
-</p></details>
-
-- [ ] **Uso de media queries**
-
-  <details><summary>Links</summary><p>
-
-  * [CSS media queries - MDN](https://developer.mozilla.org/es/docs/CSS/Media_queries)
-</p></details>
-
-- [ ] **Módulos de ECMAScript (ES Modules)**
-
-  <details><summary>Links</summary><p>
-
-  * [import - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/import)
-  * [export - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/export)
-</p></details>
-
-- [ ] **Uso de linter (ESLINT)**
-
-- [ ] **Uso de identificadores descriptivos (Nomenclatura y Semántica)**
-
-### Control de Versiones (Git y GitHub)
-
-- [ ] **Git: Instalación y configuración**
-
-- [ ] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
-
-- [ ] **Git: Integración de cambios entre ramas (branch, checkout, fetch, merge, reset, rebase, tag)**
-
-- [ ] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
-
-- [ ] **GitHub: Despliegue con GitHub Pages**
-
-  <details><summary>Links</summary><p>
-
-  * [Sitio oficial de GitHub Pages](https://pages.github.com/)
-</p></details>
-
-- [ ] **GitHub: Colaboración en Github (branches | forks | pull requests | code review | tags)**
-
-- [ ] **GitHub: Organización en Github (projects | issues | labels | milestones | releases)**
-
-### HTTP
-
-- [ ] **Consulta o petición (request) y respuesta (response).**
-
-  <details><summary>Links</summary><p>
-
-  * [Generalidades del protocolo HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Overview)
-  * [Mensajes HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Messages)
-</p></details>
-
-- [ ] **Cabeceras (headers)**
-
-  <details><summary>Links</summary><p>
-
-  * [HTTP headers - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Headers)
-</p></details>
-
-- [ ] **Cuerpo (body)**
-
-  <details><summary>Links</summary><p>
-
-  * [Cuerpo de Mensajes HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Messages#cuerpo)
-</p></details>
-
-- [ ] **Verbos HTTP**
-
-  <details><summary>Links</summary><p>
-
-  * [Métodos de petición HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Methods)
-</p></details>
-
-- [ ] **Códigos de status de HTTP**
-
-  <details><summary>Links</summary><p>
-
-  * [Códigos de estado de respuesta HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Status)
-  * [The Complete Guide to Status Codes for Meaningful ReST APIs - dev.to](https://dev.to/khaosdoctor/the-complete-guide-to-status-codes-for-meaningful-rest-apis-1-5c5)
-</p></details>
-
-- [ ] **Encodings y JSON**
-
-  <details><summary>Links</summary><p>
-
-  * [Introducción a JSON - Documentación oficial](https://www.json.org/json-es.html)
-</p></details>
-
-- [ ] **CORS (Cross-Origin Resource Sharing)**
-
-  <details><summary>Links</summary><p>
-
-  * [Control de acceso HTTP (CORS) - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/CORS)
-</p></details>
+![menu](https://ibb.co/s20qdg6)
